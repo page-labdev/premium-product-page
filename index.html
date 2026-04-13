@@ -7,15 +7,11 @@
 
 <style>
 
-/* =========================
-   DESIGN SYSTEM
-========================= */
 :root{
   --bg:#f6f1ea;
   --text:#1b1b1b;
   --muted:#6b6b6b;
   --accent:#b08d57;
-  --card:#ffffff;
 }
 
 body{
@@ -24,7 +20,7 @@ body{
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
-  padding-bottom:80px;
+  padding-bottom:90px;
 }
 
 /* =========================
@@ -32,7 +28,7 @@ body{
 ========================= */
 .reveal{
   opacity:0;
-  transform:translateY(25px);
+  transform:translateY(30px);
   transition:0.9s cubic-bezier(0.2,0.8,0.2,1);
 }
 
@@ -42,21 +38,21 @@ body{
 }
 
 /* =========================
-   HERO (MORE TRUST CONTENT)
+   HERO
 ========================= */
 .hero{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:60px 20px 20px;
+  padding:60px 20px 10px;
 }
 
 .hero img{
-  width:90%;
-  max-width:420px;
-  border-radius:24px;
-  box-shadow:0 40px 80px rgba(0,0,0,0.15);
+  width:92%;
+  max-width:440px;
+  border-radius:26px;
+  box-shadow:0 40px 90px rgba(0,0,0,0.15);
 }
 
 .hero h1{
@@ -66,27 +62,67 @@ body{
 
 .hero p{
   color:var(--muted);
-  max-width:520px;
+  max-width:560px;
   line-height:1.8;
   font-size:15px;
 }
 
+/* TRUST */
+.trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.trust span{
+  background:white;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px;
+}
+
 /* =========================
-   GALLERY
+   GALLERY (LUXURY ZOOM)
 ========================= */
 .gallery{
   display:flex;
   justify-content:center;
-  gap:10px;
+  gap:12px;
   flex-wrap:wrap;
-  padding:20px;
+  padding:25px;
 }
 
-.gallery img{
-  width:80px;
-  height:80px;
+.g-item{
+  position:relative;
+}
+
+.g-item img{
+  width:95px;
+  height:95px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:14px;
+  transition:0.4s;
+}
+
+.g-item:hover img{
+  transform:scale(1.25);
+  z-index:2;
+}
+
+.zoom{
+  position:absolute;
+  top:6px;
+  right:6px;
+  background:white;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  font-size:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* =========================
@@ -96,26 +132,25 @@ body{
   max-width:750px;
   margin:auto;
   text-align:center;
-  padding:40px 20px;
+  padding:30px 20px;
   color:var(--muted);
   line-height:1.9;
 }
 
 /* =========================
-   BEFORE AFTER (FIXED + MOBILE)
+   BEFORE AFTER
 ========================= */
 .ba{
-  padding:30px 20px;
+  padding:20px;
   text-align:center;
 }
 
 .ba-box{
   position:relative;
-  max-width:420px;
+  max-width:430px;
   margin:auto;
-  border-radius:18px;
   overflow:hidden;
-  touch-action:none;
+  border-radius:18px;
 }
 
 .ba-box img{
@@ -138,7 +173,6 @@ body{
   width:3px;
   height:100%;
   background:white;
-  box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 /* =========================
@@ -146,19 +180,19 @@ body{
 ========================= */
 .product{
   text-align:center;
-  padding:40px 20px;
+  padding:30px 20px;
 }
 
 .price{
+  color:var(--accent);
   font-size:24px;
   margin:10px 0;
-  color:var(--accent);
 }
 
 .btn{
   background:#111;
   color:white;
-  padding:14px 22px;
+  padding:14px 20px;
   border:none;
   border-radius:14px;
   width:80%;
@@ -166,7 +200,7 @@ body{
 }
 
 /* =========================
-   BENEFITS
+   INFO BLOCKS
 ========================= */
 .grid{
   display:grid;
@@ -187,65 +221,46 @@ body{
 }
 
 /* =========================
-   REVIEWS (REAL TRUST STYLE)
+   HOW TO USE
+========================= */
+.steps{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width:700px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.step{
+  background:white;
+  padding:14px;
+  border-radius:14px;
+  color:var(--muted);
+}
+
+/* =========================
+   REVIEWS
 ========================= */
 .reviews{
   padding:50px 20px;
-  text-align:center;
 }
 
 .review{
   background:white;
   max-width:420px;
-  margin:12px auto;
+  margin:10px auto;
   padding:18px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  text-align:left;
 }
 
 .stars{
   color:#d4a94f;
-  font-size:14px;
-  margin-bottom:8px;
-}
-
-.name{
-  font-weight:bold;
-  font-size:13px;
-  margin-top:10px;
 }
 
 /* =========================
-   STICKY BAR
-========================= */
-.sticky{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:white;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 15px;
-  box-shadow:0 -10px 30px rgba(0,0,0,0.1);
-}
-
-.sticky button{
-  background:#111;
-  color:white;
-  border:none;
-  padding:10px 18px;
-  border-radius:12px;
-}
-
-.sticky span{
-  color:var(--accent);
-}
-
-/* =========================
-   MOBILE / DESKTOP FIX
+   DESKTOP UPGRADE
 ========================= */
 @media(min-width:768px){
 
@@ -260,12 +275,27 @@ body{
   width:380px;
 }
 
-.grid{
+/* SIDE BY SIDE SYSTEM */
+.dual{
+  display:grid;
   grid-template-columns:1fr 1fr;
+  gap:30px;
+  max-width:1100px;
+  margin:auto;
 }
 
-.review{
-  text-align:left;
+/* gallery bigger on desktop */
+.g-item img{
+  width:120px;
+  height:120px;
+}
+
+.steps{
+  flex-direction:row;
+}
+
+.step{
+  flex:1;
 }
 }
 
@@ -280,24 +310,39 @@ body{
   <div>
     <h1>Radiance, Engineered</h1>
     <p>
-      A clinically-inspired luxury skincare formula designed to restore skin barrier health,
-      enhance natural glow, and improve texture without heaviness or irritation.
-      <br><br>
-      Dermatology-inspired formulation meets modern luxury skincare rituals.
+      Clinically-inspired skincare designed for hydration, glow, and barrier repair.
     </p>
+    <div class="trust">
+      <span>Dermatologist Inspired</span>
+      <span>Clean Formula</span>
+      <span>Visible Glow</span>
+    </div>
   </div>
 </section>
 
 <!-- GALLERY -->
 <div class="gallery reveal">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
+
+  <div class="g-item">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
+    <div class="zoom">🔍</div>
+  </div>
+
+  <div class="g-item">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
+    <div class="zoom">🔍</div>
+  </div>
+
+  <div class="g-item">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
+    <div class="zoom">🔍</div>
+  </div>
+
 </div>
 
 <!-- STORY -->
 <section class="story reveal">
-  Designed for skin that needs visible improvement in hydration, texture, and radiance — without harsh actives or overload.
+  Balanced skincare system designed for long-term skin health and visible glow improvement.
 </section>
 
 <!-- BEFORE AFTER -->
@@ -318,12 +363,28 @@ body{
   <button class="btn">Add to Cart</button>
 </section>
 
-<!-- BENEFITS -->
+<!-- SIDE BY SIDE (DESKTOP OPTIMIZED) -->
+<section class="dual reveal">
+
+  <!-- INGREDIENTS -->
+  <div class="card">
+    <h3>Key Ingredients</h3>
+    Hyaluronic Acid, Niacinamide, Peptides, Shea Butter
+  </div>
+
+  <!-- HOW TO USE -->
+  <div class="card">
+    <h3>How to Use</h3>
+    Apply morning & evening on clean skin. Massage gently until absorbed.
+  </div>
+
+</section>
+
+<!-- SKIN TYPE -->
 <section class="grid reveal">
-  <div class="card">Deep hydration that lasts all day</div>
-  <div class="card">Improves skin texture visibly</div>
-  <div class="card">Reduces dullness and fatigue</div>
-  <div class="card">Luxury spa-like finish</div>
+  <div class="card">Dry Skin ✓</div>
+  <div class="card">Oily Skin ✓</div>
+  <div class="card">Sensitive Skin ✓</div>
 </section>
 
 <!-- REVIEWS -->
@@ -331,29 +392,15 @@ body{
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “After 5 days my skin looked noticeably smoother and more hydrated.”
-    <div class="name">— Emma L.</div>
+    “Skin feels smoother and deeply hydrated.”
   </div>
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “Feels like a luxury brand product. Texture is amazing.”
-    <div class="name">— Sarah M.</div>
-  </div>
-
-  <div class="review">
-    <div class="stars">★★★★☆</div>
-    “Very light but effective. My skin feels healthier.”
-    <div class="name">— Olivia K.</div>
+    “Luxury feel, real results.”
   </div>
 
 </section>
-
-<!-- STICKY BAR -->
-<div class="sticky">
-  <div>Luxury Cream <span>$39</span></div>
-  <button>Add to Cart</button>
-</div>
 
 <script>
 
@@ -368,35 +415,24 @@ const observer = new IntersectionObserver((entries)=>{
 },{threshold:0.15});
 items.forEach(el=>observer.observe(el));
 
-/* BEFORE AFTER - MOBILE + DESKTOP */
+/* BEFORE AFTER */
 const box = document.querySelector('.ba-box');
 const after = document.querySelector('.after');
 const handle = document.querySelector('.handle');
 
 if(box){
-
-  let active = false;
-
-  const move = (x)=>{
-    const r = box.getBoundingClientRect();
-    let p = ((x - r.left) / r.width) * 100;
-    if(p < 0) p = 0;
-    if(p > 100) p = 100;
-    after.style.width = p + '%';
-    handle.style.left = p + '%';
-  };
-
-  box.addEventListener('mousedown',()=>active=true);
-  box.addEventListener('mouseup',()=>active=false);
-  box.addEventListener('mouseleave',()=>active=false);
-
   box.addEventListener('mousemove',(e)=>{
-    if(active) move(e.clientX);
+    const r = box.getBoundingClientRect();
+    let p = ((e.clientX - r.left)/r.width)*100;
+    after.style.width = p+'%';
+    handle.style.left = p+'%';
   });
 
-  /* MOBILE TOUCH */
   box.addEventListener('touchmove',(e)=>{
-    move(e.touches[0].clientX);
+    const r = box.getBoundingClientRect();
+    let p = ((e.touches[0].clientX - r.left)/r.width)*100;
+    after.style.width = p+'%';
+    handle.style.left = p+'%';
   });
 }
 
