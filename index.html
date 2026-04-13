@@ -1,1 +1,356 @@
-<h1 style="color:black">TEST PAGE OK</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Skincare System</title>
+
+<style>
+
+:root{
+  --bg:#f6f1ea;
+  --text:#1b1b1b;
+  --muted:#6b6b6b;
+  --accent:#b08d57;
+}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* =========================
+   SAFE REVEAL
+========================= */
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.hero img{
+  width:90%;
+  max-width:420px;
+  border-radius:24px;
+  box-shadow:0 40px 80px rgba(0,0,0,0.15);
+}
+
+.hero h1{
+  font-size:32px;
+  margin-top:20px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:550px;
+  line-height:1.7;
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  max-width:900px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.gallery img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  border-radius:14px;
+  transition:0.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.08);
+}
+
+/* =========================
+   BEFORE AFTER
+========================= */
+.ba{
+  padding:30px 20px;
+  text-align:center;
+}
+
+.ba-box{
+  position:relative;
+  max-width:420px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:18px;
+}
+
+.ba-box img{
+  width:100%;
+  display:block;
+}
+
+.after{
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  overflow:hidden;
+}
+
+.handle{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:3px;
+  height:100%;
+  background:white;
+}
+
+/* =========================
+   PRODUCT
+========================= */
+.product{
+  text-align:center;
+  padding:30px 20px;
+}
+
+.price{
+  color:var(--accent);
+  font-size:22px;
+}
+
+/* =========================
+   GRID SYSTEM
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  color:var(--muted);
+}
+
+/* =========================
+   STEPS
+========================= */
+.steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.step{
+  background:white;
+  padding:14px;
+  border-radius:12px;
+  color:var(--muted);
+}
+
+/* =========================
+   SKIN TYPE
+========================= */
+.skin{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.skin div{
+  background:white;
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* =========================
+   REVIEWS
+========================= */
+.reviews{
+  padding:40px 20px;
+}
+
+.review{
+  background:white;
+  max-width:420px;
+  margin:10px auto;
+  padding:16px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.stars{
+  color:#d4a94f;
+}
+
+/* =========================
+   DESKTOP FIX
+========================= */
+@media(min-width:768px){
+
+.hero{
+  flex-direction:row;
+  text-align:left;
+  gap:40px;
+}
+
+.hero img{
+  width:380px;
+}
+
+.grid{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.steps{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.skin{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  max-width:900px;
+  margin:auto;
+}
+
+.review{
+  margin:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero reveal">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
+  <div>
+    <h1>Radiance, Engineered</h1>
+    <p>Clinical skincare system designed for hydration, glow, and barrier repair.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery reveal">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
+</section>
+
+<!-- STORY -->
+<section class="card reveal" style="max-width:900px;margin:20px auto;">
+  Engineered skincare system focused on hydration, barrier repair and long-term skin health.
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="ba reveal">
+  <div class="ba-box">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
+    <div class="after">
+      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
+    </div>
+    <div class="handle"></div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="product reveal">
+  <h2>Luxury Skin Cream</h2>
+  <div class="price">$39.00</div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="grid reveal">
+  <div class="card"><b>Hyaluronic Acid</b><br>Deep hydration and skin plumping</div>
+  <div class="card"><b>Niacinamide</b><br>Brightens and evens skin tone</div>
+  <div class="card"><b>Peptides</b><br>Supports collagen and firmness</div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="steps reveal">
+  <div class="step">1. Cleanse skin</div>
+  <div class="step">2. Apply cream</div>
+  <div class="step">3. Massage gently</div>
+</section>
+
+<!-- SKIN TYPE -->
+<section class="skin reveal">
+  <div>Dry Skin</div>
+  <div>Oily Skin</div>
+  <div>Sensitive Skin</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews reveal">
+
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    Amazing hydration and glow improvement.
+  </div>
+
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    Feels like luxury skincare.
+  </div>
+
+</section>
+
+<script>
+const items = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('active');
+    }
+  });
+},{threshold:0.15});
+
+items.forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
