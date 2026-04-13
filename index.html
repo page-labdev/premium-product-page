@@ -8,7 +8,7 @@
 <style>
 
 /* =========================
-   DESIGN SYSTEM (SHOPIFY READY)
+   DESIGN SYSTEM
 ========================= */
 :root{
   --bg:#f6f1ea;
@@ -28,12 +28,12 @@ body{
 }
 
 /* =========================
-   GLOBAL ANIMATION SYSTEM
+   SCROLL REVEAL
 ========================= */
 .reveal{
   opacity:0;
-  transform:translateY(30px);
-  transition:1s cubic-bezier(0.2,0.8,0.2,1);
+  transform:translateY(25px);
+  transition:0.9s cubic-bezier(0.2,0.8,0.2,1);
 }
 
 .reveal.active{
@@ -42,16 +42,7 @@ body{
 }
 
 /* =========================
-   SECTION SYSTEM (SHOPIFY STYLE)
-========================= */
-.section{
-  padding:70px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-/* =========================
-   HERO (APPLE STYLE)
+   HERO (MORE TRUST CONTENT)
 ========================= */
 .hero{
   display:flex;
@@ -69,64 +60,65 @@ body{
 }
 
 .hero h1{
-  font-size:36px;
+  font-size:34px;
   margin:20px 0 10px;
 }
 
 .hero p{
   color:var(--muted);
-  max-width:420px;
-  line-height:1.7;
+  max-width:520px;
+  line-height:1.8;
+  font-size:15px;
 }
 
 /* =========================
-   STORY BLOCK (APPLE STYLE TEXT)
-========================= */
-.story{
-  text-align:center;
-  color:var(--muted);
-  line-height:1.9;
-  font-size:16px;
-}
-
-/* =========================
-   GALLERY SYSTEM
+   GALLERY
 ========================= */
 .gallery{
   display:flex;
   justify-content:center;
+  gap:10px;
   flex-wrap:wrap;
-  gap:12px;
+  padding:20px;
 }
 
 .gallery img{
-  width:85px;
-  height:85px;
+  width:80px;
+  height:80px;
   object-fit:cover;
-  border-radius:14px;
-  transition:0.3s;
-}
-
-.gallery img:hover{
-  transform:scale(1.05);
+  border-radius:12px;
 }
 
 /* =========================
-   PROOF SECTION (BEFORE/AFTER)
+   STORY
 ========================= */
-.proof{
+.story{
+  max-width:750px;
+  margin:auto;
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  line-height:1.9;
+}
+
+/* =========================
+   BEFORE AFTER (FIXED + MOBILE)
+========================= */
+.ba{
+  padding:30px 20px;
   text-align:center;
 }
 
-.ba{
+.ba-box{
   position:relative;
   max-width:420px;
   margin:auto;
   border-radius:18px;
   overflow:hidden;
+  touch-action:none;
 }
 
-.ba img{
+.ba-box img{
   width:100%;
   display:block;
 }
@@ -143,40 +135,24 @@ body{
   position:absolute;
   top:0;
   left:50%;
-  width:2px;
+  width:3px;
   height:100%;
   background:white;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
 /* =========================
-   BENEFITS (SHOPIFY BLOCKS)
-========================= */
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-}
-
-.card{
-  background:white;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  text-align:center;
-  color:var(--muted);
-}
-
-/* =========================
-   PRODUCT CTA BLOCK
+   PRODUCT
 ========================= */
 .product{
   text-align:center;
+  padding:40px 20px;
 }
 
 .price{
   font-size:24px;
-  color:var(--accent);
   margin:10px 0;
+  color:var(--accent);
 }
 
 .btn{
@@ -185,27 +161,63 @@ body{
   padding:14px 22px;
   border:none;
   border-radius:14px;
-  cursor:pointer;
   width:80%;
   max-width:320px;
 }
 
 /* =========================
-   REVIEWS
+   BENEFITS
 ========================= */
-.review{
-  max-width:380px;
-  margin:12px auto;
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:700px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.card{
   background:white;
   padding:16px;
-  border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  color:var(--muted);
+  border-radius:16px;
   text-align:center;
+  color:var(--muted);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* =========================
-   STICKY BUY BAR (CONVERSION ENGINE)
+   REVIEWS (REAL TRUST STYLE)
+========================= */
+.reviews{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.review{
+  background:white;
+  max-width:420px;
+  margin:12px auto;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  text-align:left;
+}
+
+.stars{
+  color:#d4a94f;
+  font-size:14px;
+  margin-bottom:8px;
+}
+
+.name{
+  font-weight:bold;
+  font-size:13px;
+  margin-top:10px;
+}
+
+/* =========================
+   STICKY BAR
 ========================= */
 .sticky{
   position:fixed;
@@ -233,7 +245,7 @@ body{
 }
 
 /* =========================
-   MOBILE FIRST
+   MOBILE / DESKTOP FIX
 ========================= */
 @media(min-width:768px){
 
@@ -251,6 +263,10 @@ body{
 .grid{
   grid-template-columns:1fr 1fr;
 }
+
+.review{
+  text-align:left;
+}
 }
 
 </style>
@@ -259,29 +275,34 @@ body{
 <body>
 
 <!-- HERO -->
-<section class="hero section reveal">
+<section class="hero reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
     <h1>Radiance, Engineered</h1>
-    <p>A luxury skincare ritual inspired by clinical science and high-end beauty craftsmanship.</p>
+    <p>
+      A clinically-inspired luxury skincare formula designed to restore skin barrier health,
+      enhance natural glow, and improve texture without heaviness or irritation.
+      <br><br>
+      Dermatology-inspired formulation meets modern luxury skincare rituals.
+    </p>
   </div>
 </section>
 
-<!-- STORY -->
-<section class="section story reveal">
-  Designed for skin that demands clarity, glow, and balance — without heaviness, without compromise.
-</section>
-
 <!-- GALLERY -->
-<section class="section gallery reveal">
+<div class="gallery reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
+</div>
+
+<!-- STORY -->
+<section class="story reveal">
+  Designed for skin that needs visible improvement in hydration, texture, and radiance — without harsh actives or overload.
 </section>
 
-<!-- PROOF -->
-<section class="section proof reveal">
-  <div class="ba">
+<!-- BEFORE AFTER -->
+<section class="ba reveal">
+  <div class="ba-box">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
     <div class="after">
       <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
@@ -290,26 +311,42 @@ body{
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="section grid reveal">
-  <div class="card">Deep hydration without heaviness</div>
-  <div class="card">Brightens and evens tone</div>
-  <div class="card">Smooths texture instantly</div>
-  <div class="card">Luxury spa-level finish</div>
-</section>
-
 <!-- PRODUCT -->
-<section class="section product reveal">
+<section class="product reveal">
   <h2>Luxury Skin Cream</h2>
   <div class="price">$39.00</div>
   <button class="btn">Add to Cart</button>
 </section>
 
+<!-- BENEFITS -->
+<section class="grid reveal">
+  <div class="card">Deep hydration that lasts all day</div>
+  <div class="card">Improves skin texture visibly</div>
+  <div class="card">Reduces dullness and fatigue</div>
+  <div class="card">Luxury spa-like finish</div>
+</section>
+
 <!-- REVIEWS -->
-<section class="section reveal">
-  <div class="review">“Feels like Dior skincare experience.”</div>
-  <div class="review">“My skin transformed in days.”</div>
-  <div class="review">“Minimal product, maximum glow.”</div>
+<section class="reviews reveal">
+
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    “After 5 days my skin looked noticeably smoother and more hydrated.”
+    <div class="name">— Emma L.</div>
+  </div>
+
+  <div class="review">
+    <div class="stars">★★★★★</div>
+    “Feels like a luxury brand product. Texture is amazing.”
+    <div class="name">— Sarah M.</div>
+  </div>
+
+  <div class="review">
+    <div class="stars">★★★★☆</div>
+    “Very light but effective. My skin feels healthier.”
+    <div class="name">— Olivia K.</div>
+  </div>
+
 </section>
 
 <!-- STICKY BAR -->
@@ -320,11 +357,8 @@ body{
 
 <script>
 
-/* =========================
-   SCROLL ENGINE
-========================= */
+/* SCROLL */
 const items = document.querySelectorAll('.reveal');
-
 const observer = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
@@ -332,23 +366,37 @@ const observer = new IntersectionObserver((entries)=>{
     }
   });
 },{threshold:0.15});
-
 items.forEach(el=>observer.observe(el));
 
-/* =========================
-   BEFORE AFTER ENGINE
-========================= */
-const ba = document.querySelector('.ba');
+/* BEFORE AFTER - MOBILE + DESKTOP */
+const box = document.querySelector('.ba-box');
 const after = document.querySelector('.after');
 const handle = document.querySelector('.handle');
 
-if(ba){
-  ba.addEventListener('mousemove',(e)=>{
-    const r = ba.getBoundingClientRect();
-    let x = e.clientX - r.left;
-    let p = (x / r.width) * 100;
+if(box){
+
+  let active = false;
+
+  const move = (x)=>{
+    const r = box.getBoundingClientRect();
+    let p = ((x - r.left) / r.width) * 100;
+    if(p < 0) p = 0;
+    if(p > 100) p = 100;
     after.style.width = p + '%';
     handle.style.left = p + '%';
+  };
+
+  box.addEventListener('mousedown',()=>active=true);
+  box.addEventListener('mouseup',()=>active=false);
+  box.addEventListener('mouseleave',()=>active=false);
+
+  box.addEventListener('mousemove',(e)=>{
+    if(active) move(e.clientX);
+  });
+
+  /* MOBILE TOUCH */
+  box.addEventListener('touchmove',(e)=>{
+    move(e.touches[0].clientX);
   });
 }
 
