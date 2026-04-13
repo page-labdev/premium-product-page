@@ -1,15 +1,22 @@
-// BEFORE AFTER SLIDER
-const range = document.querySelector("input");
+
+// =====================
+// BEFORE / AFTER SLIDER
+// =====================
+const range = document.querySelector("input[type='range']");
 const after = document.querySelector(".after");
 const handle = document.querySelector(".handle");
 
-range.addEventListener("input", () => {
-  const value = range.value;
-  after.style.width = value + "%";
-  handle.style.left = value + "%";
-});
+if (range && after && handle) {
+  range.addEventListener("input", () => {
+    const value = range.value;
+    after.style.width = value + "%";
+    handle.style.left = value + "%";
+  });
+}
 
+// =====================
 // SCROLL ANIMATIONS
+// =====================
 const elements = document.querySelectorAll(".fade-up, .fade-left, .fade-right");
 
 const observer = new IntersectionObserver((entries) => {
@@ -21,14 +28,10 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach(el => observer.observe(el));
-fetch("product-description.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("product-description").innerHTML = data;
-  });
 
-fetch("reviews.html")
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("reviews").innerHTML = data;
-  });
+
+// =====================
+// REMOVE FETCH (IMPORTANT)
+// =====================
+// ❌ Deleted product-description.html & reviews.html loading
+// because everything is inside index.html now
