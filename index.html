@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Skincare</title>
+<title>Luxury Skincare Landing Page</title>
 
 <style>
 
@@ -14,16 +14,17 @@
   --bg:#f6f1ea;
   --text:#1b1b1b;
   --muted:#6b6b6b;
-  --card:#ffffff;
   --accent:#b08d57;
+  --card:#ffffff;
 }
 
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
+  padding-bottom:70px; /* space for sticky bar */
 }
 
 /* =========================
@@ -41,18 +42,18 @@ body{
 }
 
 /* =========================
-   HERO (EDITORIAL STYLE)
+   HERO
 ========================= */
 .hero{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:60px 20px 30px;
+  padding:50px 20px 20px;
 }
 
 .hero img{
-  width:85%;
+  width:90%;
   max-width:420px;
   border-radius:22px;
   box-shadow:0 30px 70px rgba(0,0,0,0.15);
@@ -61,7 +62,6 @@ body{
 .hero h1{
   font-size:34px;
   margin:20px 0 10px;
-  letter-spacing:0.5px;
 }
 
 .hero p{
@@ -71,14 +71,25 @@ body{
 }
 
 /* =========================
-   GALLERY STRIP
+   URGENCY BAR
+========================= */
+.urgency{
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+  padding:10px;
+  letter-spacing:0.5px;
+}
+
+/* =========================
+   GALLERY
 ========================= */
 .gallery{
   display:flex;
   justify-content:center;
   gap:10px;
-  padding:20px;
   flex-wrap:wrap;
+  padding:20px;
 }
 
 .gallery img{
@@ -86,30 +97,25 @@ body{
   height:80px;
   object-fit:cover;
   border-radius:12px;
-  transition:0.3s;
-}
-
-.gallery img:hover{
-  transform:scale(1.05);
 }
 
 /* =========================
-   STORY SECTION
+   STORY
 ========================= */
 .story{
   max-width:700px;
   margin:auto;
   text-align:center;
   padding:40px 20px;
-  line-height:1.8;
   color:var(--muted);
+  line-height:1.8;
 }
 
 /* =========================
-   BEFORE AFTER (CINEMATIC)
+   BEFORE AFTER
 ========================= */
 .ba{
-  padding:40px 20px;
+  padding:30px 20px;
   text-align:center;
 }
 
@@ -158,23 +164,22 @@ body{
 }
 
 .btn{
-  background:var(--text);
+  background:#111;
   color:white;
   padding:14px 20px;
   border:none;
   border-radius:12px;
   width:80%;
   max-width:300px;
-  cursor:pointer;
 }
 
 /* =========================
-   TRUST / BENEFITS
+   BENEFITS
 ========================= */
 .benefits{
   display:grid;
   grid-template-columns:1fr;
-  gap:15px;
+  gap:12px;
   max-width:600px;
   margin:40px auto;
   padding:0 20px;
@@ -184,9 +189,9 @@ body{
   background:var(--card);
   padding:15px;
   border-radius:14px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
   text-align:center;
   color:var(--muted);
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* =========================
@@ -208,28 +213,57 @@ body{
 }
 
 /* =========================
-   MOBILE FIRST IMPROVEMENTS
+   STICKY BUY BAR
+========================= */
+.sticky{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 15px;
+  box-shadow:0 -10px 30px rgba(0,0,0,0.1);
+  z-index:999;
+}
+
+.sticky button{
+  background:#111;
+  color:white;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+}
+
+.sticky span{
+  color:var(--accent);
+}
+
+/* =========================
+   MOBILE FIRST ENHANCE
 ========================= */
 @media(min-width:768px){
 
-  .hero{
-    flex-direction:row;
-    gap:40px;
-    text-align:left;
-    justify-content:center;
-  }
+.hero{
+  flex-direction:row;
+  gap:40px;
+  text-align:left;
+  justify-content:center;
+}
 
-  .hero img{
-    width:380px;
-  }
+.hero img{
+  width:380px;
+}
 
-  .hero h1{
-    font-size:42px;
-  }
+.hero h1{
+  font-size:42px;
+}
 
-  .benefits{
-    grid-template-columns:1fr 1fr;
-  }
+.benefits{
+  grid-template-columns:1fr 1fr;
+}
 }
 
 </style>
@@ -237,12 +271,15 @@ body{
 
 <body>
 
+<!-- URGENCY -->
+<div class="urgency reveal">Only a few units left — high demand skincare</div>
+
 <!-- HERO -->
 <section class="hero reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
     <h1>Radiance, Rewritten</h1>
-    <p>A refined skincare ritual designed to restore glow, texture, and balance.</p>
+    <p>A luxury skincare ritual designed to restore glow, hydration, and smoothness.</p>
   </div>
 </section>
 
@@ -255,7 +292,7 @@ body{
 
 <!-- STORY -->
 <section class="story reveal">
-  Crafted with a lightweight hydrating formula that melts into skin, restoring natural luminosity without heaviness or residue.
+  A lightweight formula inspired by clinical skincare science and luxury beauty rituals. Designed for daily glow enhancement.
 </section>
 
 <!-- BEFORE AFTER -->
@@ -279,18 +316,26 @@ body{
 <!-- BENEFITS -->
 <section class="benefits reveal">
   <div class="benefit">Deep hydration without heaviness</div>
-  <div class="benefit">Brightens and smooths skin tone</div>
-  <div class="benefit">Clinically-inspired formulation feel</div>
-  <div class="benefit">Clean luxury skincare aesthetic</div>
+  <div class="benefit">Smooths and refines texture</div>
+  <div class="benefit">Luxury spa-like finish</div>
+  <div class="benefit">Clean beauty formulation feel</div>
 </section>
 
 <!-- REVIEWS -->
 <section class="reviews reveal">
-  <h2>Client Feedback</h2>
-  <div class="review">“Feels like a luxury spa treatment at home.”</div>
-  <div class="review">“My skin looks healthier in days.”</div>
+  <h2>Client Reviews</h2>
+  <div class="review">“My skin looks instantly healthier.”</div>
+  <div class="review">“Feels like Dior-level skincare.”</div>
   <div class="review">“Minimal product, maximum glow.”</div>
 </section>
+
+<!-- STICKY BAR -->
+<div class="sticky">
+  <div>
+    Luxury Cream <span>$39</span>
+  </div>
+  <button>Add to Cart</button>
+</div>
 
 <script>
 
