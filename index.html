@@ -8,23 +8,23 @@
 <style>
 :root{
   --bg:#f6f1ea;
-  --text:#1b1b1b;
+  --text:#111;
   --muted:#6b6b6b;
   --accent:#b08d57;
 }
 
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;
   background:var(--bg);
   color:var(--text);
 }
 
-/* GLOBAL */
+/* LAYOUT */
 .container{
   max-width:1100px;
   margin:auto;
-  padding:50px 20px;
+  padding:60px 20px;
 }
 
 /* HERO */
@@ -36,20 +36,14 @@ body{
 
 .hero img{
   width:100%;
-  max-width:480px;
+  max-width:460px;
   border-radius:24px;
-  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  box-shadow:0 40px 100px rgba(0,0,0,0.2);
 }
 
 .hero h1{
-  font-size:40px;
+  font-size:42px;
   margin:0;
-}
-
-.subtitle{
-  font-size:18px;
-  color:var(--accent);
-  margin-bottom:10px;
 }
 
 .hero p{
@@ -59,21 +53,31 @@ body{
 
 .btn{
   margin-top:20px;
-  padding:14px 26px;
+  padding:16px 28px;
   background:#111;
-  color:white;
+  color:#fff;
   border:none;
-  border-radius:12px;
+  border-radius:14px;
+  font-size:16px;
   cursor:pointer;
 }
 
-/* STORY TEXT */
-.text-block{
-  max-width:750px;
-  margin:auto;
-  text-align:center;
-  line-height:1.9;
+/* TRUST BAR */
+.trust{
+  display:flex;
+  gap:20px;
+  font-size:14px;
   color:var(--muted);
+  margin-top:20px;
+}
+
+/* URGENCY */
+.urgency{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
 }
 
 /* GALLERY */
@@ -85,7 +89,7 @@ body{
 
 .gallery img{
   width:100%;
-  height:260px;
+  height:300px;
   object-fit:cover;
   border-radius:16px;
   transition:0.4s;
@@ -98,13 +102,11 @@ body{
 /* BEFORE AFTER */
 .ba-box{
   position:relative;
-  max-width:500px;
+  max-width:520px;
   margin:auto;
   border-radius:18px;
   overflow:hidden;
 }
-
-.ba-box img{width:100%;}
 
 .after{
   position:absolute;
@@ -123,38 +125,50 @@ body{
   background:white;
 }
 
-/* INGREDIENT TEXT */
-.ingredients{
-  max-width:800px;
+/* STORY */
+.story{
+  max-width:700px;
   margin:auto;
+  text-align:center;
   line-height:1.9;
   color:var(--muted);
 }
 
-/* STEPS */
-.steps{
-  max-width:700px;
+/* INGREDIENTS */
+.ingredients{
+  max-width:800px;
   margin:auto;
-}
-
-.step{
-  margin-bottom:20px;
+  line-height:1.8;
 }
 
 /* REVIEWS */
-.reviews{
-  max-width:800px;
-  margin:auto;
-}
-
 .review{
-  margin-bottom:25px;
-  padding-bottom:15px;
   border-bottom:1px solid #ddd;
+  padding:20px 0;
 }
 
 .stars{
   color:#d4a94f;
+}
+
+/* STICKY */
+.sticky{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  padding:12px 20px;
+  box-shadow:0 -10px 30px rgba(0,0,0,0.1);
+}
+
+.sticky button{
+  background:#111;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:12px;
 }
 
 /* DESKTOP */
@@ -163,146 +177,135 @@ body{
   flex-direction:row;
   align-items:center;
 }
-
-.hero img{
-  width:420px;
-}
-
-.gallery img{
-  height:300px;
-}
 }
 </style>
 </head>
 
 <body>
 
+<!-- URGENCY -->
+<div class="urgency">
+🔥 42 people are viewing this right now • Limited stock available
+</div>
+
 <!-- HERO -->
 <section class="container hero">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
 
-  <div>
-    <div class="subtitle">LUXURY SKINCARE</div>
-    <h1>Luméra Skin Cream</h1>
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
 
-    <p>
-      A refined skincare formula designed to restore hydration, enhance radiance, 
-      and improve skin texture through a carefully balanced combination of modern 
-      cosmetic science and botanical ingredients.
-    </p>
+<div>
+<h1>Luméra Skin Cream</h1>
 
-    <p>
-      Lightweight yet deeply nourishing, Luméra adapts to your skin’s needs — 
-      delivering visible smoothness, softness, and a naturally healthy glow.
-    </p>
+<p>
+A luxury skincare formula designed to hydrate, smooth, and restore your natural glow — without heaviness.
+</p>
 
-    <button class="btn">Shop Now</button>
-  </div>
+<div class="trust">
+<span>✔ 5,000+ customers</span>
+<span>✔ Dermatology-inspired</span>
+<span>✔ 30-day guarantee</span>
+</div>
+
+<button class="btn">Buy Now</button>
+</div>
+
 </section>
 
 <!-- STORY -->
-<section class="container text-block">
-  Designed for individuals who expect more than just hydration, this formula focuses on long-term skin quality.  
-  It works gradually, improving tone, softness, and clarity without overwhelming the skin.
+<section class="container story">
+Your skin doesn’t need more products — it needs the right formulation.
+Luméra focuses on balance: hydration, repair, and glow in one refined formula.
 </section>
 
 <!-- GALLERY -->
 <section class="container gallery">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
 </section>
 
 <!-- BEFORE AFTER -->
 <section class="container">
-  <div class="ba-box">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
-    <div class="after">
-      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
-    </div>
-    <div class="handle"></div>
-  </div>
+<div class="ba-box">
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
+<div class="after">
+<img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
+</div>
+<div class="handle"></div>
+</div>
 </section>
 
 <!-- INGREDIENTS -->
 <section class="container ingredients">
-  <h2>Key Ingredients & Benefits</h2>
 
-  <p><b>Hyaluronic Acid:</b> deeply hydrates and helps retain moisture, giving the skin a plump and smooth appearance.</p>
+<h2>Why It Works</h2>
 
-  <p><b>Niacinamide:</b> improves overall skin tone, reduces redness, and strengthens the skin barrier.</p>
+<p><b>Hyaluronic Acid</b> delivers deep hydration and smoothness.</p>
+<p><b>Niacinamide</b> evens skin tone and strengthens barrier.</p>
+<p><b>Peptides</b> improve firmness and elasticity over time.</p>
 
-  <p><b>Peptides:</b> support collagen production, helping skin feel firmer and more resilient over time.</p>
 </section>
 
 <!-- HOW TO USE -->
-<section class="container steps">
-  <h2>How to Use</h2>
+<section class="container">
 
-  <div class="step">
-    <b>Step 1:</b> Cleanse your face thoroughly to remove impurities and prepare the skin.
-  </div>
+<h2>How to Use</h2>
 
-  <div class="step">
-    <b>Step 2:</b> Apply a small amount of cream evenly across the face and neck.
-  </div>
+<p>1. Cleanse your face thoroughly.</p>
+<p>2. Apply a small amount evenly.</p>
+<p>3. Massage gently upward.</p>
+<p>4. Use morning & night.</p>
 
-  <div class="step">
-    <b>Step 3:</b> Gently massage using upward motions until fully absorbed.
-  </div>
-
-  <div class="step">
-    <b>Step 4:</b> Use morning and evening for best results.
-  </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="container reviews">
-  <h2>Customer Reviews</h2>
+<section class="container">
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    My skin feels noticeably smoother and more hydrated after just a few days.
-  </div>
+<h2>Real Customer Results</h2>
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    The texture is incredible — lightweight but very effective.
-  </div>
+<div class="review">
+<div class="stars">★★★★★</div>
+My skin feels smoother in just 3 days.
+</div>
 
-  <div class="review">
-    <div class="stars">★★★★☆</div>
-    It gave my skin a healthy glow without feeling heavy.
-  </div>
+<div class="review">
+<div class="stars">★★★★★</div>
+Looks and feels like a luxury brand.
+</div>
+
+<div class="review">
+<div class="stars">★★★★☆</div>
+Lightweight but very effective.
+</div>
+
 </section>
+
+<!-- STICKY BAR -->
+<div class="sticky">
+<div>Luméra Cream • $39</div>
+<button>Buy Now</button>
+</div>
 
 <script>
 const box = document.querySelector('.ba-box');
 const after = document.querySelector('.after');
 const handle = document.querySelector('.handle');
 
-if(box && after && handle){
-  let active=false;
+if(box){
+let active=false;
 
-  const move = (x)=>{
-    const rect = box.getBoundingClientRect();
-    let percent = ((x - rect.left)/rect.width)*100;
-    percent = Math.max(0, Math.min(100, percent));
-    after.style.width = percent + '%';
-    handle.style.left = percent + '%';
-  }
+const move = (x)=>{
+const r = box.getBoundingClientRect();
+let p = ((x-r.left)/r.width)*100;
+p=Math.max(0,Math.min(100,p));
+after.style.width=p+"%";
+handle.style.left=p+"%";
+};
 
-  box.addEventListener('mousedown',()=>active=true);
-  box.addEventListener('mouseup',()=>active=false);
-  box.addEventListener('mouseleave',()=>active=false);
-
-  box.addEventListener('mousemove',(e)=>{
-    if(active) move(e.clientX);
-  });
-
-  box.addEventListener('touchmove',(e)=>{
-    move(e.touches[0].clientX);
-  });
+box.addEventListener('mousedown',()=>active=true);
+box.addEventListener('mouseup',()=>active=false);
+box.addEventListener('mousemove',(e)=>{if(active)move(e.clientX)});
+box.addEventListener('touchmove',(e)=>move(e.touches[0].clientX));
 }
 </script>
 
