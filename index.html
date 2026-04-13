@@ -14,14 +14,38 @@ body{
   color:#111;
 }
 
-/* CONTAINER */
+/* ======================
+   TIGHT PREMIUM LAYOUT
+====================== */
+
 .container{
   max-width:1100px;
   margin:auto;
-  padding:60px 20px;
+  padding:40px 20px;
 }
 
-/* TIMER */
+/* LESS EMPTY SPACE BETWEEN SECTIONS */
+section{
+  margin-bottom:18px;
+}
+
+/* HEADINGS TIGHT */
+h2{
+  margin:0 0 10px 0;
+  font-size:28px;
+}
+
+/* TEXT TIGHT */
+p{
+  margin:8px 0;
+  line-height:1.7;
+  color:#444;
+}
+
+/* ======================
+   TIMER
+====================== */
+
 .timer{
   background:#111;
   color:white;
@@ -35,11 +59,14 @@ body{
   font-weight:bold;
 }
 
-/* HERO */
+/* ======================
+   HERO
+====================== */
+
 .hero{
   display:flex;
   flex-direction:column;
-  gap:25px;
+  gap:15px;
 }
 
 .hero img{
@@ -54,21 +81,19 @@ body{
   margin:0;
 }
 
-.hero p{
-  color:#666;
-  line-height:1.8;
-}
+/* ======================
+   GALLERY (DESKTOP)
+====================== */
 
-/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:10px;
 }
 
 .gallery img{
   width:100%;
-  height:260px;
+  height:220px;
   object-fit:cover;
   border-radius:14px;
   transition:0.3s;
@@ -81,19 +106,21 @@ body{
 /* ======================
    BEFORE AFTER
 ====================== */
+
 .ba-wrapper{
   text-align:center;
+  padding-top:10px;
+  padding-bottom:10px;
 }
 
 .ba-title{
-  font-size:32px;
+  font-size:28px;
   margin:0;
 }
 
 .ba-sub{
   color:#666;
-  margin-top:8px;
-  margin-bottom:25px;
+  margin:6px 0 18px 0;
 }
 
 .ba{
@@ -102,7 +129,6 @@ body{
   margin:auto;
   overflow:hidden;
   border-radius:18px;
-  cursor:grab;
 }
 
 .ba img{
@@ -128,9 +154,8 @@ body{
   box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-/* CTA */
 .ba-cta{
-  margin-top:25px;
+  margin-top:18px;
 }
 
 .ba-cta button{
@@ -141,59 +166,67 @@ body{
   border-radius:12px;
   cursor:pointer;
   font-size:15px;
-  transition:0.3s;
 }
 
-.ba-cta button:hover{
-  transform:scale(1.05);
-}
+/* ======================
+   INGREDIENTS
+====================== */
 
-/* INGREDIENTS */
 .ingredients{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
+  gap:10px;
 }
 
 .card{
   background:white;
-  padding:18px;
+  padding:16px;
   border-radius:14px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* HOW TO USE */
+/* ======================
+   HOW TO USE
+====================== */
+
 .steps{
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:10px;
 }
 
 .step{
   background:white;
-  padding:16px;
+  padding:12px;
   border-radius:14px;
 }
 
-/* REVIEWS */
+/* ======================
+   REVIEWS
+====================== */
+
 .reviews{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:15px;
+  gap:10px;
 }
 
 .review{
   background:white;
-  padding:16px;
+  padding:14px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 .stars{
   color:#d4a94f;
+  margin-bottom:6px;
 }
 
-/* STICKY BAR */
+/* ======================
+   STICKY BAR
+====================== */
+
 .sticky{
   position:fixed;
   bottom:0;
@@ -214,19 +247,22 @@ body{
   border-radius:12px;
 }
 
-/* MOBILE GALLERY */
+/* ======================
+   MOBILE GALLERY SWIPE
+====================== */
+
 @media(max-width:768px){
 
 .gallery{
   display:flex;
   overflow-x:auto;
-  gap:12px;
+  gap:10px;
   scroll-snap-type:x mandatory;
 }
 
 .gallery img{
-  flex:0 0 80%;
-  height:260px;
+  flex:0 0 85%;
+  height:240px;
   border-radius:18px;
   scroll-snap-align:center;
   object-fit:cover;
@@ -236,12 +272,15 @@ body{
   display:none;
 }
 
-/* HERO STACK */
 .hero{
   flex-direction:column;
 }
 
 }
+
+/* ======================
+   DESKTOP HERO
+====================== */
 
 @media(min-width:768px){
 .hero{
@@ -267,11 +306,16 @@ body{
 
   <div>
     <h1>Luméra Skin Cream</h1>
+
     <p>
       Luxury skincare that restores glow, hydration and skin balance — while refining texture and supporting the skin barrier at a deeper level.
-      <br><br>
+    </p>
+
+    <p>
       Powered by advanced hydration science, it delivers a smoother, more radiant complexion that feels naturally healthy, never heavy.
-      <br><br>
+    </p>
+
+    <p>
       Designed for skin that demands clarity, softness, and long-lasting comfort.
     </p>
   </div>
@@ -311,8 +355,8 @@ body{
 
   <div class="ingredients">
     <div class="card"><b>Hyaluronic Acid</b>Deep hydration & plumping</div>
-    <div class="card"><b>Niacinamide</b>Brightens & balances tone</div>
-    <div class="card"><b>Peptides</b>Anti-aging skin support</div>
+    <div class="card"><b>Niacinamide</b>Brightens & evens tone</div>
+    <div class="card"><b>Peptides</b>Supports skin firmness</div>
   </div>
 </section>
 
@@ -321,9 +365,9 @@ body{
   <h2>How to Use</h2>
 
   <div class="steps">
-    <div class="step">1. Cleanse skin thoroughly</div>
-    <div class="step">2. Apply small amount evenly</div>
-    <div class="step">3. Massage upward gently</div>
+    <div class="step">1. Cleanse face</div>
+    <div class="step">2. Apply small amount</div>
+    <div class="step">3. Massage gently upward</div>
     <div class="step">4. Use morning & night</div>
   </div>
 
@@ -334,9 +378,20 @@ body{
   <h2>Customer Reviews</h2>
 
   <div class="reviews">
-    <div class="review"><div class="stars">★★★★★</div>Emma R. — “Visible improvement in just days”</div>
-    <div class="review"><div class="stars">★★★★★</div>Sarah M. — “Feels like luxury skincare”</div>
-    <div class="review"><div class="stars">★★★★☆</div>Olivia K. — “Light but very effective”</div>
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      Emma R. — “Visible improvement in just a few days.”
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★★</div>
+      Sarah M. — “Feels like a $200 luxury cream.”
+    </div>
+
+    <div class="review">
+      <div class="stars">★★★★☆</div>
+      Olivia K. — “Light texture, strong results.”
+    </div>
   </div>
 </section>
 
