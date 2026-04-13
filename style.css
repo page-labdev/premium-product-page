@@ -1,1 +1,167 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f6f2;
+  color: #222;
+}
 
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  color: #777;
+}
+
+/* PRODUCT */
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 20px;
+}
+
+.image img {
+  width: 380px;
+  border-radius: 18px;
+  transition: 0.5s;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+.info {
+  max-width: 400px;
+}
+
+.price {
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.desc {
+  color: #555;
+}
+
+.cta {
+  width: 100%;
+  padding: 15px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  background: #333;
+}
+
+.badges {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badges span {
+  background: #eee;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* BEFORE AFTER */
+.before-after {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.slider {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* AFTER IMAGE MASK */
+.after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+/* HANDLE LINE */
+.handle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: white;
+  z-index: 10;
+}
+
+/* SLIDER */
+input[type=range] {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* ANIMATIONS */
+.fade-up,
+.fade-left,
+.fade-right {
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.fade-up {
+  transform: translateY(40px);
+}
+
+.fade-left {
+  transform: translateX(-40px);
+}
+
+.fade-right {
+  transform: translateX(40px);
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+.delay {
+  transition-delay: 0.3s;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+  .image img {
+    width: 100%;
+  }
+
+  .product {
+    flex-direction: column;
+  }
+}
