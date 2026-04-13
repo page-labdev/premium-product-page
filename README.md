@@ -2,25 +2,25 @@
 
 A luxury, conversion-focused product page built with clean UI and smooth animations.
 
-## ✨ Features
+##  Features
 - Scroll reveal animations
 - Before / After comparison slider
 - Luxury minimal UI design
 - Hover effects
 - Mobile responsive layout
 
-## 🎯 Purpose
+## Purpose
 Designed to simulate a real high-converting eCommerce product page that improves:
 - Trust
 - Engagement
 - Sales conversion
 
-## 🛠 Tech Stack
+##  Tech Stack
 - HTML
 - CSS
 - JavaScript
 
-## 🚀 Use Cases
+##  Use Cases
 - eCommerce landing pages
 - Beauty & skincare brands
 - Portfolio showcase projects
