@@ -1,22 +1,8 @@
 
 // =====================
-// BEFORE / AFTER SLIDER
+// SCROLL ANIMATIONS (IMPROVED)
 // =====================
-const range = document.querySelector("input[type='range']");
-const after = document.querySelector(".after");
-const handle = document.querySelector(".handle");
 
-if (range && after && handle) {
-  range.addEventListener("input", () => {
-    const value = range.value;
-    after.style.width = value + "%";
-    handle.style.left = value + "%";
-  });
-}
-
-// =====================
-// SCROLL ANIMATIONS
-// =====================
 const elements = document.querySelectorAll(".fade-up, .fade-left, .fade-right");
 
 const observer = new IntersectionObserver((entries) => {
@@ -25,13 +11,9 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.add("show");
     }
   });
+}, {
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
 });
 
 elements.forEach(el => observer.observe(el));
-
-
-// =====================
-// REMOVE FETCH (IMPORTANT)
-// =====================
-// ❌ Deleted product-description.html & reviews.html loading
-// because everything is inside index.html now
