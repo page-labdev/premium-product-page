@@ -92,12 +92,19 @@ body {
   max-width: 600px;
   margin: auto;
   overflow: hidden;
+  height: auto;
 }
 
 .slider img {
   width: 100%;
   display: block;
   border-radius: 10px;
+}
+
+/* BEFORE IMAGE */
+.before {
+  width: 100%;
+  display: block;
 }
 
 /* AFTER IMAGE MASK */
@@ -114,16 +121,19 @@ body {
   position: absolute;
   top: 0;
   left: 50%;
+  transform: translateX(-50%);
   width: 3px;
   height: 100%;
   background: white;
   z-index: 10;
+  pointer-events: none;
 }
 
-/* SLIDER */
+/* SLIDER INPUT */
 input[type=range] {
   width: 100%;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 /* ANIMATIONS */
@@ -131,7 +141,8 @@ input[type=range] {
 .fade-left,
 .fade-right {
   opacity: 0;
-  transition: 0.8s ease;
+  transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .fade-up {
@@ -148,15 +159,25 @@ input[type=range] {
 
 .show {
   opacity: 1;
-  transform: translate(0,0);
+  transform: translate(0, 0);
 }
 
 .delay {
   transition-delay: 0.3s;
 }
 
+/* SECTION HOVER LIFT (premium feel) */
+.product,
+.before-after,
+.reviews-section,
+.product-description,
+.ingredients,
+.how-to-use {
+  transition: 0.3s ease;
+}
+
 /* MOBILE */
-@media (max-width:768px){
+@media (max-width: 768px) {
   .image img {
     width: 100%;
   }
