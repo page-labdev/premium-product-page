@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Skincare Landing Page</title>
+<title>Luxury Skincare System</title>
 
 <style>
 
 /* =========================
-   LUXURY DESIGN SYSTEM
+   DESIGN SYSTEM (SHOPIFY READY)
 ========================= */
 :root{
   --bg:#f6f1ea;
@@ -24,16 +24,16 @@ body{
   background:var(--bg);
   color:var(--text);
   overflow-x:hidden;
-  padding-bottom:70px; /* space for sticky bar */
+  padding-bottom:80px;
 }
 
 /* =========================
-   SCROLL REVEAL
+   GLOBAL ANIMATION SYSTEM
 ========================= */
 .reveal{
   opacity:0;
-  transform:translateY(25px);
-  transition:0.9s cubic-bezier(0.2,0.8,0.2,1);
+  transform:translateY(30px);
+  transition:1s cubic-bezier(0.2,0.8,0.2,1);
 }
 
 .reveal.active{
@@ -42,84 +42,83 @@ body{
 }
 
 /* =========================
-   HERO
+   SECTION SYSTEM (SHOPIFY STYLE)
+========================= */
+.section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* =========================
+   HERO (APPLE STYLE)
 ========================= */
 .hero{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:50px 20px 20px;
+  padding:60px 20px 20px;
 }
 
 .hero img{
   width:90%;
   max-width:420px;
-  border-radius:22px;
-  box-shadow:0 30px 70px rgba(0,0,0,0.15);
+  border-radius:24px;
+  box-shadow:0 40px 80px rgba(0,0,0,0.15);
 }
 
 .hero h1{
-  font-size:34px;
+  font-size:36px;
   margin:20px 0 10px;
 }
 
 .hero p{
   color:var(--muted);
-  max-width:400px;
-  line-height:1.6;
+  max-width:420px;
+  line-height:1.7;
 }
 
 /* =========================
-   URGENCY BAR
+   STORY BLOCK (APPLE STYLE TEXT)
 ========================= */
-.urgency{
+.story{
   text-align:center;
-  font-size:13px;
   color:var(--muted);
-  padding:10px;
-  letter-spacing:0.5px;
+  line-height:1.9;
+  font-size:16px;
 }
 
 /* =========================
-   GALLERY
+   GALLERY SYSTEM
 ========================= */
 .gallery{
   display:flex;
   justify-content:center;
-  gap:10px;
   flex-wrap:wrap;
-  padding:20px;
+  gap:12px;
 }
 
 .gallery img{
-  width:80px;
-  height:80px;
+  width:85px;
+  height:85px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:14px;
+  transition:0.3s;
+}
+
+.gallery img:hover{
+  transform:scale(1.05);
 }
 
 /* =========================
-   STORY
+   PROOF SECTION (BEFORE/AFTER)
 ========================= */
-.story{
-  max-width:700px;
-  margin:auto;
+.proof{
   text-align:center;
-  padding:40px 20px;
-  color:var(--muted);
-  line-height:1.8;
 }
 
-/* =========================
-   BEFORE AFTER
-========================= */
 .ba{
-  padding:30px 20px;
-  text-align:center;
-}
-
-.ba-box{
   position:relative;
   max-width:420px;
   margin:auto;
@@ -127,7 +126,7 @@ body{
   overflow:hidden;
 }
 
-.ba-box img{
+.ba img{
   width:100%;
   display:block;
 }
@@ -146,74 +145,67 @@ body{
   left:50%;
   width:2px;
   height:100%;
-  background:rgba(255,255,255,0.9);
+  background:white;
 }
 
 /* =========================
-   PRODUCT SECTION
+   BENEFITS (SHOPIFY BLOCKS)
+========================= */
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+  text-align:center;
+  color:var(--muted);
+}
+
+/* =========================
+   PRODUCT CTA BLOCK
 ========================= */
 .product{
   text-align:center;
-  padding:40px 20px;
 }
 
 .price{
-  font-size:22px;
-  margin:10px 0;
+  font-size:24px;
   color:var(--accent);
+  margin:10px 0;
 }
 
 .btn{
   background:#111;
   color:white;
-  padding:14px 20px;
+  padding:14px 22px;
   border:none;
-  border-radius:12px;
-  width:80%;
-  max-width:300px;
-}
-
-/* =========================
-   BENEFITS
-========================= */
-.benefits{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  max-width:600px;
-  margin:40px auto;
-  padding:0 20px;
-}
-
-.benefit{
-  background:var(--card);
-  padding:15px;
   border-radius:14px;
-  text-align:center;
-  color:var(--muted);
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  cursor:pointer;
+  width:80%;
+  max-width:320px;
 }
 
 /* =========================
    REVIEWS
 ========================= */
-.reviews{
-  text-align:center;
-  padding:40px 20px;
-}
-
 .review{
+  max-width:380px;
+  margin:12px auto;
   background:white;
-  max-width:360px;
-  margin:10px auto;
-  padding:15px;
+  padding:16px;
   border-radius:14px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
   color:var(--muted);
+  text-align:center;
 }
 
 /* =========================
-   STICKY BUY BAR
+   STICKY BUY BAR (CONVERSION ENGINE)
 ========================= */
 .sticky{
   position:fixed;
@@ -226,7 +218,6 @@ body{
   align-items:center;
   padding:12px 15px;
   box-shadow:0 -10px 30px rgba(0,0,0,0.1);
-  z-index:999;
 }
 
 .sticky button{
@@ -234,7 +225,7 @@ body{
   color:white;
   border:none;
   padding:10px 18px;
-  border-radius:10px;
+  border-radius:12px;
 }
 
 .sticky span{
@@ -242,26 +233,22 @@ body{
 }
 
 /* =========================
-   MOBILE FIRST ENHANCE
+   MOBILE FIRST
 ========================= */
 @media(min-width:768px){
 
 .hero{
   flex-direction:row;
-  gap:40px;
   text-align:left;
   justify-content:center;
+  gap:40px;
 }
 
 .hero img{
   width:380px;
 }
 
-.hero h1{
-  font-size:42px;
-}
-
-.benefits{
+.grid{
   grid-template-columns:1fr 1fr;
 }
 }
@@ -271,33 +258,30 @@ body{
 
 <body>
 
-<!-- URGENCY -->
-<div class="urgency reveal">Only a few units left — high demand skincare</div>
-
 <!-- HERO -->
-<section class="hero reveal">
+<section class="hero section reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
-    <h1>Radiance, Rewritten</h1>
-    <p>A luxury skincare ritual designed to restore glow, hydration, and smoothness.</p>
+    <h1>Radiance, Engineered</h1>
+    <p>A luxury skincare ritual inspired by clinical science and high-end beauty craftsmanship.</p>
   </div>
 </section>
 
+<!-- STORY -->
+<section class="section story reveal">
+  Designed for skin that demands clarity, glow, and balance — without heaviness, without compromise.
+</section>
+
 <!-- GALLERY -->
-<div class="gallery reveal">
+<section class="section gallery reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
-</div>
-
-<!-- STORY -->
-<section class="story reveal">
-  A lightweight formula inspired by clinical skincare science and luxury beauty rituals. Designed for daily glow enhancement.
 </section>
 
-<!-- BEFORE AFTER -->
-<section class="ba reveal">
-  <div class="ba-box">
+<!-- PROOF -->
+<section class="section proof reveal">
+  <div class="ba">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
     <div class="after">
       <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
@@ -306,41 +290,38 @@ body{
   </div>
 </section>
 
+<!-- BENEFITS -->
+<section class="section grid reveal">
+  <div class="card">Deep hydration without heaviness</div>
+  <div class="card">Brightens and evens tone</div>
+  <div class="card">Smooths texture instantly</div>
+  <div class="card">Luxury spa-level finish</div>
+</section>
+
 <!-- PRODUCT -->
-<section class="product reveal">
+<section class="section product reveal">
   <h2>Luxury Skin Cream</h2>
   <div class="price">$39.00</div>
   <button class="btn">Add to Cart</button>
 </section>
 
-<!-- BENEFITS -->
-<section class="benefits reveal">
-  <div class="benefit">Deep hydration without heaviness</div>
-  <div class="benefit">Smooths and refines texture</div>
-  <div class="benefit">Luxury spa-like finish</div>
-  <div class="benefit">Clean beauty formulation feel</div>
-</section>
-
 <!-- REVIEWS -->
-<section class="reviews reveal">
-  <h2>Client Reviews</h2>
-  <div class="review">“My skin looks instantly healthier.”</div>
-  <div class="review">“Feels like Dior-level skincare.”</div>
+<section class="section reveal">
+  <div class="review">“Feels like Dior skincare experience.”</div>
+  <div class="review">“My skin transformed in days.”</div>
   <div class="review">“Minimal product, maximum glow.”</div>
 </section>
 
 <!-- STICKY BAR -->
 <div class="sticky">
-  <div>
-    Luxury Cream <span>$39</span>
-  </div>
+  <div>Luxury Cream <span>$39</span></div>
   <button>Add to Cart</button>
 </div>
 
 <script>
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL ENGINE
 ========================= */
 const items = document.querySelectorAll('.reveal');
 
@@ -355,17 +336,17 @@ const observer = new IntersectionObserver((entries)=>{
 items.forEach(el=>observer.observe(el));
 
 /* =========================
-   BEFORE AFTER DRAG
+   BEFORE AFTER ENGINE
 ========================= */
-const box = document.querySelector('.ba-box');
+const ba = document.querySelector('.ba');
 const after = document.querySelector('.after');
 const handle = document.querySelector('.handle');
 
-if(box){
-  box.addEventListener('mousemove',(e)=>{
-    const rect = box.getBoundingClientRect();
-    let x = e.clientX - rect.left;
-    let p = (x / rect.width) * 100;
+if(ba){
+  ba.addEventListener('mousemove',(e)=>{
+    const r = ba.getBoundingClientRect();
+    let x = e.clientX - r.left;
+    let p = (x / r.width) * 100;
     after.style.width = p + '%';
     handle.style.left = p + '%';
   });
