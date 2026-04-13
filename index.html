@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Skincare System</title>
+<title>Luxury Skincare</title>
 
 <style>
-
 :root{
   --bg:#f6f1ea;
   --text:#1b1b1b;
@@ -19,25 +18,9 @@ body{
   font-family:Arial, sans-serif;
   background:var(--bg);
   color:var(--text);
-  overflow-x:hidden;
 }
 
-/* =========================
-   SAFE REVEAL
-========================= */
-.reveal{
-  opacity:0;
-  transform:translateY(25px);
-  transition:0.8s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero{
   display:flex;
   flex-direction:column;
@@ -49,51 +32,33 @@ body{
 .hero img{
   width:90%;
   max-width:420px;
-  border-radius:24px;
-  box-shadow:0 40px 80px rgba(0,0,0,0.15);
+  border-radius:20px;
 }
 
-.hero h1{
-  font-size:32px;
-  margin-top:20px;
-}
+.hero h1{font-size:32px;}
+.hero p{color:var(--muted); max-width:500px;}
 
-.hero p{
-  color:var(--muted);
-  max-width:550px;
-  line-height:1.7;
-}
-
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:10px;
   max-width:900px;
   margin:auto;
-  padding:30px 20px;
+  padding:20px;
 }
 
 .gallery img{
   width:100%;
-  height:240px;
+  height:220px;
   object-fit:cover;
-  border-radius:14px;
-  transition:0.4s;
+  border-radius:12px;
 }
 
-.gallery img:hover{
-  transform:scale(1.08);
-}
-
-/* =========================
-   BEFORE AFTER
-========================= */
+/* BEFORE AFTER */
 .ba{
-  padding:30px 20px;
   text-align:center;
+  padding:30px;
 }
 
 .ba-box{
@@ -101,13 +66,10 @@ body{
   max-width:420px;
   margin:auto;
   overflow:hidden;
-  border-radius:18px;
+  border-radius:15px;
 }
 
-.ba-box img{
-  width:100%;
-  display:block;
-}
+.ba-box img{width:100%;}
 
 .after{
   position:absolute;
@@ -126,26 +88,11 @@ body{
   background:white;
 }
 
-/* =========================
-   PRODUCT
-========================= */
-.product{
-  text-align:center;
-  padding:30px 20px;
-}
-
-.price{
-  color:var(--accent);
-  font-size:22px;
-}
-
-/* =========================
-   GRID SYSTEM
-========================= */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr;
-  gap:12px;
+  gap:10px;
   max-width:900px;
   margin:auto;
   padding:20px;
@@ -153,203 +100,107 @@ body{
 
 .card{
   background:white;
-  padding:16px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-  color:var(--muted);
-}
-
-/* =========================
-   STEPS
-========================= */
-.steps{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
-
-.step{
-  background:white;
-  padding:14px;
+  padding:15px;
   border-radius:12px;
-  color:var(--muted);
 }
 
-/* =========================
-   SKIN TYPE
-========================= */
-.skin{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:10px;
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
-
-.skin div{
-  background:white;
-  padding:14px;
-  border-radius:12px;
-  text-align:center;
-  color:var(--muted);
-}
-
-/* =========================
-   REVIEWS
-========================= */
-.reviews{
-  padding:40px 20px;
-}
-
+/* REVIEWS */
 .review{
   background:white;
-  max-width:420px;
+  max-width:400px;
   margin:10px auto;
-  padding:16px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  padding:15px;
+  border-radius:12px;
 }
 
-.stars{
-  color:#d4a94f;
-}
+.stars{color:gold;}
 
-/* =========================
-   DESKTOP FIX
-========================= */
+/* DESKTOP */
 @media(min-width:768px){
-
-.hero{
-  flex-direction:row;
-  text-align:left;
-  gap:40px;
+  .hero{flex-direction:row; gap:40px; text-align:left;}
+  .grid{grid-template-columns:repeat(3,1fr);}
+  .gallery img{height:260px;}
 }
-
-.hero img{
-  width:380px;
-}
-
-.grid{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.steps{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.skin{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.reviews{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  max-width:900px;
-  margin:auto;
-}
-
-.review{
-  margin:0;
-}
-
-}
-
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- HERO -->
-<section class="hero reveal">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
+<section class="hero">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448" alt="product">
   <div>
     <h1>Radiance, Engineered</h1>
-    <p>Clinical skincare system designed for hydration, glow, and barrier repair.</p>
+    <p>Luxury skincare designed for hydration, glow, and skin balance.</p>
   </div>
 </section>
 
 <!-- GALLERY -->
-<section class="gallery reveal">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
-</section>
-
-<!-- STORY -->
-<section class="card reveal" style="max-width:900px;margin:20px auto;">
-  Engineered skincare system focused on hydration, barrier repair and long-term skin health.
+<section class="gallery">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581" alt="">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579" alt="">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584" alt="">
 </section>
 
 <!-- BEFORE AFTER -->
-<section class="ba reveal">
+<section class="ba">
   <div class="ba-box">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446" alt="">
     <div class="after">
-      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
+      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447" alt="">
     </div>
     <div class="handle"></div>
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="product reveal">
-  <h2>Luxury Skin Cream</h2>
-  <div class="price">$39.00</div>
-</section>
-
 <!-- INGREDIENTS -->
-<section class="grid reveal">
-  <div class="card"><b>Hyaluronic Acid</b><br>Deep hydration and skin plumping</div>
-  <div class="card"><b>Niacinamide</b><br>Brightens and evens skin tone</div>
-  <div class="card"><b>Peptides</b><br>Supports collagen and firmness</div>
-</section>
-
-<!-- HOW TO USE -->
-<section class="steps reveal">
-  <div class="step">1. Cleanse skin</div>
-  <div class="step">2. Apply cream</div>
-  <div class="step">3. Massage gently</div>
-</section>
-
-<!-- SKIN TYPE -->
-<section class="skin reveal">
-  <div>Dry Skin</div>
-  <div>Oily Skin</div>
-  <div>Sensitive Skin</div>
+<section class="grid">
+  <div class="card"><b>Hyaluronic Acid</b><br>Hydrates skin deeply</div>
+  <div class="card"><b>Niacinamide</b><br>Brightens skin tone</div>
+  <div class="card"><b>Peptides</b><br>Supports collagen</div>
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews reveal">
-
+<section>
   <div class="review">
     <div class="stars">★★★★★</div>
-    Amazing hydration and glow improvement.
+    Amazing hydration and glow.
   </div>
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    Feels like luxury skincare.
+    Feels like premium skincare.
   </div>
-
 </section>
 
 <script>
-const items = document.querySelectorAll('.reveal');
+const box = document.querySelector('.ba-box');
+const after = document.querySelector('.after');
+const handle = document.querySelector('.handle');
 
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('active');
-    }
+if(box && after && handle){
+  let active=false;
+
+  const move = (x)=>{
+    const rect = box.getBoundingClientRect();
+    let percent = ((x - rect.left)/rect.width)*100;
+    percent = Math.max(0, Math.min(100, percent));
+    after.style.width = percent + '%';
+    handle.style.left = percent + '%';
+  }
+
+  box.addEventListener('mousedown',()=>active=true);
+  box.addEventListener('mouseup',()=>active=false);
+  box.addEventListener('mouseleave',()=>active=false);
+
+  box.addEventListener('mousemove',(e)=>{
+    if(active) move(e.clientX);
   });
-},{threshold:0.15});
 
-items.forEach(el=>observer.observe(el));
+  box.addEventListener('touchmove',(e)=>{
+    move(e.touches[0].clientX);
+  });
+}
 </script>
 
 </body>
