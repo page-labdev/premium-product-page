@@ -5,7 +5,9 @@ body {
   color: #222;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
   text-align: center;
   padding: 90px 20px;
@@ -19,7 +21,9 @@ body {
   color: #777;
 }
 
-/* PRODUCT */
+/* =========================
+   PRODUCT
+========================= */
 .product {
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +85,9 @@ body {
   font-size: 12px;
 }
 
-/* BEFORE AFTER */
+/* =========================
+   BEFORE AFTER
+========================= */
 .before-after {
   text-align: center;
   padding: 80px 20px;
@@ -92,7 +98,6 @@ body {
   max-width: 600px;
   margin: auto;
   overflow: hidden;
-  height: auto;
 }
 
 .slider img {
@@ -101,13 +106,11 @@ body {
   border-radius: 10px;
 }
 
-/* BEFORE IMAGE */
 .before {
   width: 100%;
   display: block;
 }
 
-/* AFTER IMAGE MASK */
 .after {
   position: absolute;
   top: 0;
@@ -116,7 +119,6 @@ body {
   overflow: hidden;
 }
 
-/* HANDLE LINE */
 .handle {
   position: absolute;
   top: 0;
@@ -129,14 +131,15 @@ body {
   pointer-events: none;
 }
 
-/* SLIDER INPUT */
 input[type=range] {
   width: 100%;
   margin-top: 15px;
   cursor: pointer;
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 .fade-up,
 .fade-left,
 .fade-right {
@@ -162,33 +165,9 @@ input[type=range] {
   transform: translate(0, 0);
 }
 
-.delay {
-  transition-delay: 0.3s;
-}
-
-/* SECTION HOVER LIFT (premium feel) */
-.product,
-.before-after,
-.reviews-section,
-.product-description,
-.ingredients,
-.how-to-use {
-  transition: 0.3s ease;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .image img {
-    width: 100%;
-  }
-
-  .product {
-    flex-direction: column;
-  }
-}
-
 /* =========================
-   SECTION BASE STYLING
+   SECTIONS (IMPORTANT FIX)
+   THIS WAS THE MAIN ISSUE BEFORE
 ========================= */
 
 .product-description,
@@ -196,15 +175,20 @@ input[type=range] {
 .how-to-use,
 .reviews-section {
   text-align: center;
-  padding: 80px 20px;
+  padding: 90px 20px;
+  background: #fff;
+  margin: 40px auto;
+  border-radius: 16px;
+  max-width: 1100px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-/* SECTION HEADINGS */
+/* HEADINGS */
 .product-description h2,
 .ingredients h2,
 .how-to-use h2,
 .reviews-section h2 {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 25px;
 }
 
@@ -227,7 +211,7 @@ input[type=range] {
 }
 
 /* =========================
-   INGREDIENT GRID
+   INGREDIENTS
 ========================= */
 
 .ingredient-grid {
@@ -245,7 +229,7 @@ input[type=range] {
 }
 
 /* =========================
-   HOW TO USE STEPS
+   HOW TO USE
 ========================= */
 
 .steps {
@@ -272,4 +256,17 @@ input[type=range] {
   border-radius: 50%;
   line-height: 25px;
   margin-bottom: 10px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .image img {
+    width: 100%;
+  }
+
+  .product {
+    flex-direction: column;
+  }
 }
