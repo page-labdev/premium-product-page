@@ -24,12 +24,12 @@ body{
 }
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL
 ========================= */
 .reveal{
   opacity:0;
   transform:translateY(30px);
-  transition:0.9s cubic-bezier(0.2,0.8,0.2,1);
+  transition:0.9s ease;
 }
 
 .reveal.active{
@@ -45,7 +45,7 @@ body{
   flex-direction:column;
   align-items:center;
   text-align:center;
-  padding:60px 20px 10px;
+  padding:60px 20px;
 }
 
 .hero img{
@@ -57,17 +57,17 @@ body{
 
 .hero h1{
   font-size:34px;
-  margin:20px 0 10px;
 }
 
 .hero p{
   color:var(--muted);
   max-width:560px;
   line-height:1.8;
-  font-size:15px;
 }
 
-/* TRUST */
+/* =========================
+   TRUST TAGS
+========================= */
 .trust{
   display:flex;
   flex-wrap:wrap;
@@ -84,45 +84,48 @@ body{
 }
 
 /* =========================
-   GALLERY (LUXURY ZOOM)
+   GALLERY (3 BIG IMAGES FIXED)
 ========================= */
 .gallery{
-  display:flex;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
   gap:12px;
-  flex-wrap:wrap;
-  padding:25px;
+  max-width:900px;
+  margin:auto;
+  padding:30px 20px;
 }
 
-.g-item{
+.gallery-item{
   position:relative;
+  overflow:hidden;
+  border-radius:16px;
 }
 
-.g-item img{
-  width:95px;
-  height:95px;
+.gallery-item img{
+  width:100%;
+  height:260px;
   object-fit:cover;
-  border-radius:14px;
   transition:0.4s;
 }
 
-.g-item:hover img{
-  transform:scale(1.25);
-  z-index:2;
+.gallery-item:hover img{
+  transform:scale(1.15);
 }
 
+/* zoom icon FIXED POSITION */
 .zoom{
   position:absolute;
-  top:6px;
-  right:6px;
+  top:10px;
+  right:10px;
   background:white;
-  width:20px;
-  height:20px;
+  width:26px;
+  height:26px;
   border-radius:50%;
-  font-size:12px;
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:13px;
+  box-shadow:0 5px 10px rgba(0,0,0,0.1);
 }
 
 /* =========================
@@ -149,8 +152,8 @@ body{
   position:relative;
   max-width:430px;
   margin:auto;
-  overflow:hidden;
   border-radius:18px;
+  overflow:hidden;
 }
 
 .ba-box img{
@@ -200,42 +203,82 @@ body{
 }
 
 /* =========================
-   INFO BLOCKS
+   INGREDIENTS (FIXED DESKTOP)
 ========================= */
-.grid{
+.ingredients{
   display:grid;
   grid-template-columns:1fr;
   gap:12px;
-  max-width:700px;
+  max-width:900px;
   margin:auto;
-  padding:0 20px;
+  padding:30px 20px;
 }
 
-.card{
+.ingredient{
   background:white;
   padding:16px;
   border-radius:16px;
-  text-align:center;
-  color:var(--muted);
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
+.ingredient h3{
+  margin:0 0 5px;
+}
+
+.ingredient p{
+  margin:0;
+  color:var(--muted);
+  line-height:1.6;
+}
+
 /* =========================
-   HOW TO USE
+   HOW TO USE (STEP SYSTEM)
 ========================= */
 .steps{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:1fr;
   gap:10px;
-  max-width:700px;
+  max-width:900px;
   margin:auto;
-  padding:0 20px;
+  padding:20px;
 }
 
 .step{
   background:white;
   padding:14px;
   border-radius:14px;
+  color:var(--muted);
+}
+
+.step span{
+  display:inline-block;
+  background:black;
+  color:white;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  text-align:center;
+  line-height:22px;
+  margin-right:8px;
+}
+
+/* =========================
+   SKIN TYPE BLOCK
+========================= */
+.skin-type{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.skin{
+  background:white;
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
   color:var(--muted);
 }
 
@@ -260,14 +303,13 @@ body{
 }
 
 /* =========================
-   DESKTOP UPGRADE
+   DESKTOP FIX
 ========================= */
 @media(min-width:768px){
 
 .hero{
   flex-direction:row;
   text-align:left;
-  justify-content:center;
   gap:40px;
 }
 
@@ -275,28 +317,30 @@ body{
   width:380px;
 }
 
-/* SIDE BY SIDE SYSTEM */
-.dual{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-  max-width:1100px;
-  margin:auto;
+/* 3 images bigger on desktop */
+.gallery{
+  grid-template-columns:repeat(3,1fr);
 }
 
-/* gallery bigger on desktop */
-.g-item img{
-  width:120px;
-  height:120px;
+.gallery-item img{
+  height:320px;
 }
 
+/* ingredients side by side */
+.ingredients{
+  grid-template-columns:repeat(3,1fr);
+}
+
+/* steps side by side */
 .steps{
-  flex-direction:row;
+  grid-template-columns:repeat(3,1fr);
 }
 
-.step{
-  flex:1;
+/* skin type side by side */
+.skin-type{
+  grid-template-columns:repeat(3,1fr);
 }
+
 }
 
 </style>
@@ -309,40 +353,39 @@ body{
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
     <h1>Radiance, Engineered</h1>
-    <p>
-      Clinically-inspired skincare designed for hydration, glow, and barrier repair.
-    </p>
+    <p>Clinically-designed skincare for hydration, glow, and barrier repair.</p>
+
     <div class="trust">
       <span>Dermatologist Inspired</span>
       <span>Clean Formula</span>
-      <span>Visible Glow</span>
+      <span>Visible Results</span>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<div class="gallery reveal">
+<!-- GALLERY (FIXED 3 BIG IMAGES) -->
+<section class="gallery reveal">
 
-  <div class="g-item">
+  <div class="gallery-item">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
     <div class="zoom">🔍</div>
   </div>
 
-  <div class="g-item">
+  <div class="gallery-item">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
     <div class="zoom">🔍</div>
   </div>
 
-  <div class="g-item">
+  <div class="gallery-item">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
     <div class="zoom">🔍</div>
   </div>
 
-</div>
+</section>
 
 <!-- STORY -->
 <section class="story reveal">
-  Balanced skincare system designed for long-term skin health and visible glow improvement.
+  Professional skincare system designed for long-term skin health and visible glow improvement.
 </section>
 
 <!-- BEFORE AFTER -->
@@ -363,28 +406,42 @@ body{
   <button class="btn">Add to Cart</button>
 </section>
 
-<!-- SIDE BY SIDE (DESKTOP OPTIMIZED) -->
-<section class="dual reveal">
+<!-- INGREDIENTS (DETAILED) -->
+<section class="ingredients reveal">
 
-  <!-- INGREDIENTS -->
-  <div class="card">
-    <h3>Key Ingredients</h3>
-    Hyaluronic Acid, Niacinamide, Peptides, Shea Butter
+  <div class="ingredient">
+    <h3>Hyaluronic Acid</h3>
+    <p>Deep hydration booster that retains moisture and plumps skin.</p>
   </div>
 
-  <!-- HOW TO USE -->
-  <div class="card">
-    <h3>How to Use</h3>
-    Apply morning & evening on clean skin. Massage gently until absorbed.
+  <div class="ingredient">
+    <h3>Niacinamide</h3>
+    <p>Improves skin tone, reduces redness, and strengthens barrier.</p>
+  </div>
+
+  <div class="ingredient">
+    <h3>Peptides</h3>
+    <p>Supports collagen production for smoother, firmer skin.</p>
   </div>
 
 </section>
 
+<!-- HOW TO USE (STEP BY STEP) -->
+<section class="steps reveal">
+
+  <div class="step"><span>1</span> Cleanse skin thoroughly</div>
+  <div class="step"><span>2</span> Apply small amount of cream</div>
+  <div class="step"><span>3</span> Massage until fully absorbed</div>
+
+</section>
+
 <!-- SKIN TYPE -->
-<section class="grid reveal">
-  <div class="card">Dry Skin ✓</div>
-  <div class="card">Oily Skin ✓</div>
-  <div class="card">Sensitive Skin ✓</div>
+<section class="skin-type reveal">
+
+  <div class="skin">Perfect for Dry Skin</div>
+  <div class="skin">Perfect for Oily Skin</div>
+  <div class="skin">Perfect for Sensitive Skin</div>
+
 </section>
 
 <!-- REVIEWS -->
@@ -392,51 +449,15 @@ body{
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “Skin feels smoother and deeply hydrated.”
+    “Skin feels deeply hydrated and smoother.”
   </div>
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “Luxury feel, real results.”
+    “Luxury feel with real visible results.”
   </div>
 
 </section>
-
-<script>
-
-/* SCROLL */
-const items = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('active');
-    }
-  });
-},{threshold:0.15});
-items.forEach(el=>observer.observe(el));
-
-/* BEFORE AFTER */
-const box = document.querySelector('.ba-box');
-const after = document.querySelector('.after');
-const handle = document.querySelector('.handle');
-
-if(box){
-  box.addEventListener('mousemove',(e)=>{
-    const r = box.getBoundingClientRect();
-    let p = ((e.clientX - r.left)/r.width)*100;
-    after.style.width = p+'%';
-    handle.style.left = p+'%';
-  });
-
-  box.addEventListener('touchmove',(e)=>{
-    const r = box.getBoundingClientRect();
-    let p = ((e.touches[0].clientX - r.left)/r.width)*100;
-    after.style.width = p+'%';
-    handle.style.left = p+'%';
-  });
-}
-
-</script>
 
 </body>
 </html>
