@@ -21,3 +21,14 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 elements.forEach(el => observer.observe(el));
+fetch("product-description.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("product-description").innerHTML = data;
+  });
+
+fetch("reviews.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("reviews").innerHTML = data;
+  });
