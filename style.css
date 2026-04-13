@@ -65,6 +65,9 @@ body {
   cursor: pointer;
   margin-top: 20px;
   transition: 0.3s;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 }
 
 .cta:hover {
@@ -98,6 +101,8 @@ body {
   max-width: 600px;
   margin: auto;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
 }
 
 .slider img {
@@ -126,7 +131,8 @@ body {
   transform: translateX(-50%);
   width: 3px;
   height: 100%;
-  background: white;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   z-index: 10;
   pointer-events: none;
 }
@@ -162,12 +168,11 @@ input[type=range] {
 
 .show {
   opacity: 1;
-  transform: translate(0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* =========================
-   SECTIONS (IMPORTANT FIX)
-   THIS WAS THE MAIN ISSUE BEFORE
+   SECTIONS (FINAL FIX)
 ========================= */
 
 .product-description,
@@ -181,6 +186,7 @@ input[type=range] {
   border-radius: 16px;
   max-width: 1100px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 /* HEADINGS */
