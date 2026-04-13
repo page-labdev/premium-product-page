@@ -6,37 +6,48 @@
 <title>Luméra Skin Cream</title>
 
 <style>
-:root{
-  --bg:#f6f1ea;
-  --text:#111;
-  --muted:#6b6b6b;
-}
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--bg);
-  color:var(--text);
+  background:#f6f1ea;
+  color:#111;
 }
 
-/* LAYOUT */
 .container{
   max-width:1100px;
   margin:auto;
   padding:60px 20px;
 }
 
+/* ======================
+   TIMER BAR (UPDATED)
+====================== */
+.timer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+  letter-spacing:0.5px;
+}
+
+.timer span{
+  color:#d4a94f;
+  font-weight:bold;
+}
+
 /* HERO */
 .hero{
   display:flex;
   flex-direction:column;
-  gap:30px;
+  gap:25px;
 }
 
 .hero img{
   width:100%;
   max-width:460px;
-  border-radius:24px;
+  border-radius:22px;
   box-shadow:0 40px 90px rgba(0,0,0,0.15);
 }
 
@@ -46,37 +57,8 @@ body{
 }
 
 .hero p{
-  color:var(--muted);
+  color:#666;
   line-height:1.8;
-}
-
-.btn{
-  margin-top:20px;
-  padding:14px 26px;
-  background:#111;
-  color:#fff;
-  border:none;
-  border-radius:14px;
-  cursor:pointer;
-}
-
-/* TRUST */
-.trust{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-  font-size:14px;
-  color:var(--muted);
-  margin-top:15px;
-}
-
-/* URGENCY */
-.urgency{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:10px;
-  font-size:14px;
 }
 
 /* GALLERY */
@@ -88,34 +70,25 @@ body{
 
 .gallery img{
   width:100%;
-  height:280px;
+  height:260px;
   object-fit:cover;
-  border-radius:16px;
-  transition:0.4s;
+  border-radius:14px;
 }
 
-.gallery img:hover{
-  transform:scale(1.05);
-}
-
-/* =========================
-   BEFORE / AFTER (RESTORED PREMIUM VERSION)
-========================= */
-.ba-box{
+/* BEFORE AFTER */
+.ba{
   position:relative;
   max-width:520px;
   margin:auto;
-  border-radius:18px;
   overflow:hidden;
-  cursor:grab;
+  border-radius:18px;
 }
 
-.ba-box img{
+.ba img{
   width:100%;
   display:block;
 }
 
-/* AFTER MASK */
 .after{
   position:absolute;
   top:0;
@@ -124,7 +97,6 @@ body{
   overflow:hidden;
 }
 
-/* HANDLE */
 .handle{
   position:absolute;
   top:0;
@@ -135,44 +107,45 @@ body{
   box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-/* STORY */
-.story{
-  max-width:700px;
-  margin:auto;
-  text-align:center;
-  line-height:1.9;
-  color:var(--muted);
-}
-
 /* INGREDIENTS */
 .ingredients{
-  max-width:800px;
-  margin:auto;
-  line-height:1.8;
-  color:var(--muted);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* HOW TO USE */
-.how-wrap{
+.steps{
   display:flex;
   flex-direction:column;
-  gap:30px;
+  gap:12px;
 }
 
-.how-img img{
-  width:100%;
-  border-radius:18px;
-}
-
-.how-text{
-  line-height:1.8;
-  color:var(--muted);
+.step{
+  background:white;
+  padding:16px;
+  border-radius:14px;
 }
 
 /* REVIEWS */
+.reviews{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+}
+
 .review{
-  border-bottom:1px solid #ddd;
-  padding:20px 0;
+  background:white;
+  padding:16px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 .stars{
@@ -183,11 +156,12 @@ body{
 .sticky{
   position:fixed;
   bottom:0;
+  left:0;
   width:100%;
   background:white;
   display:flex;
   justify-content:space-between;
-  padding:12px 20px;
+  padding:12px 18px;
   box-shadow:0 -10px 30px rgba(0,0,0,0.1);
 }
 
@@ -195,31 +169,26 @@ body{
   background:#111;
   color:white;
   border:none;
-  padding:12px 20px;
+  padding:10px 18px;
   border-radius:12px;
 }
 
 /* DESKTOP */
 @media(min-width:768px){
-  .hero{
-    flex-direction:row;
-    align-items:center;
-  }
-
-  .how-wrap{
-    flex-direction:row;
-    align-items:center;
-    gap:50px;
-  }
+.hero{
+  flex-direction:row;
+  align-items:center;
 }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- URGENCY -->
-<div class="urgency">
-🔥 Limited stock • 42 people viewing
+<!-- 🔥 TIMER -->
+<div class="timer">
+🔥 LIMITED SALE ENDS IN: <span id="countdown">00:00:00</span>
 </div>
 
 <!-- HERO -->
@@ -229,140 +198,117 @@ body{
 
   <div>
     <h1>Luméra Skin Cream</h1>
-
-    <p>
-      A luxury skincare formula designed to deeply hydrate, restore skin balance, 
-      and improve natural glow without heaviness or irritation.
-    </p>
-
-    <div class="trust">
-      <span>✔ 5,000+ customers</span>
-      <span>✔ Dermatology-inspired</span>
-      <span>✔ 30-day guarantee</span>
-    </div>
-
-    <button class="btn">Buy Now</button>
+    <p>Luxury skincare that restores glow, hydration and skin balance.</p>
   </div>
 
 </section>
 
-<!-- STORY -->
-<section class="container story">
-Your skin needs balance — not overload. Luméra focuses on hydration, repair, and long-term skin health.
-</section>
-
 <!-- GALLERY -->
 <section class="container gallery">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg">
 </section>
 
-<!-- BEFORE / AFTER -->
+<!-- BEFORE AFTER -->
 <section class="container">
 
-  <h2 style="text-align:center;">Real Transformation</h2>
-
-  <div class="ba-box" id="baBox">
-
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
-
+  <div class="ba" id="ba">
+    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png">
     <div class="after" id="after">
-      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
+      <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png">
     </div>
-
     <div class="handle" id="handle"></div>
-
   </div>
 
 </section>
 
 <!-- INGREDIENTS -->
-<section class="container ingredients">
-  <h2>Key Ingredients</h2>
-  <p><b>Hyaluronic Acid:</b> deep hydration and plumping effect.</p>
-  <p><b>Niacinamide:</b> brightens and evens skin tone.</p>
-  <p><b>Peptides:</b> improves firmness and elasticity.</p>
+<section class="container">
+  <h2>Ingredients</h2>
+
+  <div class="ingredients">
+    <div class="card"><b>Hyaluronic Acid</b>Deep hydration</div>
+    <div class="card"><b>Niacinamide</b>Brightens skin tone</div>
+    <div class="card"><b>Peptides</b>Anti-aging support</div>
+  </div>
 </section>
 
 <!-- HOW TO USE -->
-<section class="container how-wrap">
+<section class="container">
+  <h2>How to Use</h2>
 
-  <div class="how-img">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-  </div>
-
-  <div class="how-text">
-    <h2>How to Use</h2>
-    <p><b>Step 1:</b> Cleanse skin.</p>
-    <p><b>Step 2:</b> Apply small amount.</p>
-    <p><b>Step 3:</b> Massage gently upward.</p>
-    <p><b>Step 4:</b> Use morning & night.</p>
+  <div class="steps">
+    <div class="step">1. Cleanse face</div>
+    <div class="step">2. Apply cream</div>
+    <div class="step">3. Massage gently</div>
+    <div class="step">4. Use daily</div>
   </div>
 
 </section>
 
 <!-- REVIEWS -->
 <section class="container">
-  <h2>Customer Reviews</h2>
+  <h2>Reviews</h2>
 
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    My skin feels smoother and healthier.
-  </div>
-
-  <div class="review">
-    <div class="stars">★★★★★</div>
-    Luxury feel and fast results.
-  </div>
-
-  <div class="review">
-    <div class="stars">★★★★☆</div>
-    Very lightweight and effective.
+  <div class="reviews">
+    <div class="review"><div class="stars">★★★★★</div>Emma R. — “Amazing results in days”</div>
+    <div class="review"><div class="stars">★★★★★</div>Sarah M. — “Luxury feel”</div>
+    <div class="review"><div class="stars">★★★★☆</div>Olivia K. — “Very effective”</div>
   </div>
 </section>
 
-<!-- STICKY BAR -->
+<!-- STICKY -->
 <div class="sticky">
   <div>Luméra Cream</div>
-  <button>Buy Now</button>
+  <button>BUY NOW</button>
 </div>
 
 <script>
-const box = document.getElementById('baBox');
-const after = document.getElementById('after');
-const handle = document.getElementById('handle');
 
-if(box && after && handle){
+/* BEFORE AFTER */
+const ba=document.getElementById('ba');
+const after=document.getElementById('after');
+const handle=document.getElementById('handle');
 
-  let active = false;
+let active=false;
 
-  const move = (x) => {
-    const rect = box.getBoundingClientRect();
-    let percent = ((x - rect.left) / rect.width) * 100;
-
-    percent = Math.max(0, Math.min(100, percent));
-
-    after.style.width = percent + '%';
-    handle.style.left = percent + '%';
-  };
-
-  box.addEventListener('mousedown', () => active = true);
-  box.addEventListener('mouseup', () => active = false);
-  box.addEventListener('mouseleave', () => active = false);
-
-  box.addEventListener('mousemove', (e) => {
-    if(active) move(e.clientX);
-  });
-
-  box.addEventListener('touchstart', () => active = true);
-  box.addEventListener('touchend', () => active = false);
-
-  box.addEventListener('touchmove', (e) => {
-    move(e.touches[0].clientX);
-  });
-
+function move(x){
+  const r=ba.getBoundingClientRect();
+  let p=((x-r.left)/r.width)*100;
+  p=Math.max(0,Math.min(100,p));
+  after.style.width=p+'%';
+  handle.style.left=p+'%';
 }
+
+ba.addEventListener('mousedown',()=>active=true);
+ba.addEventListener('mouseup',()=>active=false);
+ba.addEventListener('mouseleave',()=>active=false);
+ba.addEventListener('mousemove',(e)=>{if(active)move(e.clientX)});
+
+ba.addEventListener('touchstart',()=>active=true);
+ba.addEventListener('touchend',()=>active=false);
+ba.addEventListener('touchmove',(e)=>move(e.touches[0].clientX));
+
+/* 🔥 SALE TIMER */
+let time = 60 * 60 * 3; // 3 hours
+
+function updateTimer(){
+  let h = Math.floor(time / 3600);
+  let m = Math.floor((time % 3600) / 60);
+  let s = time % 60;
+
+  document.getElementById("countdown").innerText =
+    String(h).padStart(2,'0') + ":" +
+    String(m).padStart(2,'0') + ":" +
+    String(s).padStart(2,'0');
+
+  if(time > 0) time--;
+}
+
+setInterval(updateTimer, 1000);
+updateTimer();
+
 </script>
 
 </body>
