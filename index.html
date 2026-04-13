@@ -24,21 +24,17 @@ body{
 }
 
 /* =========================
-   SCROLL
+   REVEAL
 ========================= */
 .reveal{
   opacity:0;
   transform:translateY(30px);
   transition:0.9s ease;
 }
-
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
+.reveal.active{opacity:1; transform:translateY(0);}
 
 /* =========================
-   HERO
+   HERO (EDITORIAL)
 ========================= */
 .hero{
   display:flex;
@@ -50,46 +46,21 @@ body{
 
 .hero img{
   width:92%;
-  max-width:440px;
-  border-radius:26px;
-  box-shadow:0 40px 90px rgba(0,0,0,0.15);
+  max-width:460px;
+  border-radius:28px;
+  box-shadow:0 50px 120px rgba(0,0,0,0.18);
 }
 
-.hero h1{
-  font-size:34px;
-}
-
-.hero p{
-  color:var(--muted);
-  max-width:560px;
-  line-height:1.8;
-}
+.hero h1{font-size:34px;}
+.hero p{color:var(--muted); max-width:600px; line-height:1.8;}
 
 /* =========================
-   TRUST TAGS
-========================= */
-.trust{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  justify-content:center;
-  margin-top:10px;
-}
-
-.trust span{
-  background:white;
-  padding:6px 10px;
-  border-radius:20px;
-  font-size:12px;
-}
-
-/* =========================
-   GALLERY (3 BIG IMAGES FIXED)
+   GALLERY (LUXURY CINEMA GRID)
 ========================= */
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:14px;
   max-width:900px;
   margin:auto;
   padding:30px 20px;
@@ -97,69 +68,46 @@ body{
 
 .gallery-item{
   position:relative;
+  border-radius:18px;
   overflow:hidden;
-  border-radius:16px;
 }
 
 .gallery-item img{
   width:100%;
-  height:260px;
+  height:320px;
   object-fit:cover;
-  transition:0.4s;
+  transition:0.5s;
 }
 
 .gallery-item:hover img{
-  transform:scale(1.15);
-}
-
-/* zoom icon FIXED POSITION */
-.zoom{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:white;
-  width:26px;
-  height:26px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:13px;
-  box-shadow:0 5px 10px rgba(0,0,0,0.1);
+  transform:scale(1.18);
 }
 
 /* =========================
-   STORY
+   STORY SPLIT (LUXURY STYLE)
 ========================= */
 .story{
-  max-width:750px;
+  display:grid;
+  grid-template-columns:1fr;
+  max-width:900px;
   margin:auto;
-  text-align:center;
-  padding:30px 20px;
+  padding:40px 20px;
   color:var(--muted);
   line-height:1.9;
+  text-align:center;
 }
 
 /* =========================
    BEFORE AFTER
 ========================= */
-.ba{
-  padding:20px;
-  text-align:center;
-}
-
 .ba-box{
   position:relative;
-  max-width:430px;
+  max-width:460px;
   margin:auto;
   border-radius:18px;
   overflow:hidden;
 }
-
-.ba-box img{
-  width:100%;
-  display:block;
-}
+.ba-box img{width:100%; display:block;}
 
 .after{
   position:absolute;
@@ -189,50 +137,32 @@ body{
 .price{
   color:var(--accent);
   font-size:24px;
-  margin:10px 0;
-}
-
-.btn{
-  background:#111;
-  color:white;
-  padding:14px 20px;
-  border:none;
-  border-radius:14px;
-  width:80%;
-  max-width:320px;
 }
 
 /* =========================
-   INGREDIENTS (FIXED DESKTOP)
+   INGREDIENTS (SCIENCE CARDS)
 ========================= */
-.ingredients{
+.dual-grid{
   display:grid;
   grid-template-columns:1fr;
   gap:12px;
-  max-width:900px;
+  max-width:1000px;
   margin:auto;
-  padding:30px 20px;
+  padding:20px;
 }
 
-.ingredient{
+.card{
   background:white;
-  padding:16px;
+  padding:18px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.ingredient h3{
-  margin:0 0 5px;
-}
-
-.ingredient p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.6;
-}
+.card h3{margin:0 0 6px;}
+.card p{margin:0; color:var(--muted); line-height:1.6;}
 
 /* =========================
-   HOW TO USE (STEP SYSTEM)
+   HOW TO USE (RITUAL)
 ========================= */
 .steps{
   display:grid;
@@ -245,27 +175,15 @@ body{
 
 .step{
   background:white;
-  padding:14px;
+  padding:16px;
   border-radius:14px;
   color:var(--muted);
 }
 
-.step span{
-  display:inline-block;
-  background:black;
-  color:white;
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  text-align:center;
-  line-height:22px;
-  margin-right:8px;
-}
-
 /* =========================
-   SKIN TYPE BLOCK
+   SKIN TYPE
 ========================= */
-.skin-type{
+.skin-grid{
   display:grid;
   grid-template-columns:1fr;
   gap:10px;
@@ -276,34 +194,35 @@ body{
 
 .skin{
   background:white;
-  padding:14px;
+  padding:16px;
   border-radius:14px;
   text-align:center;
   color:var(--muted);
 }
 
 /* =========================
-   REVIEWS
+   REVIEWS (GRID DESKTOP FIX)
 ========================= */
 .reviews{
   padding:50px 20px;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  max-width:900px;
+  margin:auto;
 }
 
 .review{
   background:white;
-  max-width:420px;
-  margin:10px auto;
   padding:18px;
   border-radius:16px;
   box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.stars{
-  color:#d4a94f;
-}
+.stars{color:#d4a94f;}
 
 /* =========================
-   DESKTOP FIX
+   DESKTOP LUXURY LAYOUT FIX
 ========================= */
 @media(min-width:768px){
 
@@ -313,32 +232,29 @@ body{
   gap:40px;
 }
 
-.hero img{
-  width:380px;
-}
+.hero img{width:380px;}
 
-/* 3 images bigger on desktop */
-.gallery{
-  grid-template-columns:repeat(3,1fr);
-}
-
-.gallery-item img{
-  height:320px;
-}
+/* gallery cinematic */
+.gallery-item img{height:360px;}
 
 /* ingredients side by side */
-.ingredients{
+.dual-grid{
   grid-template-columns:repeat(3,1fr);
 }
 
-/* steps side by side */
+/* steps horizontal */
 .steps{
   grid-template-columns:repeat(3,1fr);
 }
 
-/* skin type side by side */
-.skin-type{
+/* skin type horizontal */
+.skin-grid{
   grid-template-columns:repeat(3,1fr);
+}
+
+/* reviews grid */
+.reviews{
+  grid-template-columns:repeat(2,1fr);
 }
 
 }
@@ -353,39 +269,22 @@ body{
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
     <h1>Radiance, Engineered</h1>
-    <p>Clinically-designed skincare for hydration, glow, and barrier repair.</p>
-
-    <div class="trust">
-      <span>Dermatologist Inspired</span>
-      <span>Clean Formula</span>
-      <span>Visible Results</span>
-    </div>
+    <p>Clinical skincare system for hydration, glow, and barrier repair.</p>
   </div>
 </section>
 
-<!-- GALLERY (FIXED 3 BIG IMAGES) -->
+<!-- GALLERY -->
 <section class="gallery reveal">
 
-  <div class="gallery-item">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581">
-    <div class="zoom">🔍</div>
-  </div>
-
-  <div class="gallery-item">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579">
-    <div class="zoom">🔍</div>
-  </div>
-
-  <div class="gallery-item">
-    <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584">
-    <div class="zoom">🔍</div>
-  </div>
+  <div class="gallery-item"><img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841465.jpg?v=1776078581"></div>
+  <div class="gallery-item"><img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841389.jpg?v=1776078579"></div>
+  <div class="gallery-item"><img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/pexels-misolo-cosmetic-2588316-4841473.jpg?v=1776078584"></div>
 
 </section>
 
 <!-- STORY -->
 <section class="story reveal">
-  Professional skincare system designed for long-term skin health and visible glow improvement.
+  Engineered skincare approach combining hydration science, barrier repair, and skin clarity improvement.
 </section>
 
 <!-- BEFORE AFTER -->
@@ -399,49 +298,38 @@ body{
   </div>
 </section>
 
-<!-- PRODUCT -->
-<section class="product reveal">
-  <h2>Luxury Skin Cream</h2>
-  <div class="price">$39.00</div>
-  <button class="btn">Add to Cart</button>
-</section>
+<!-- INGREDIENTS -->
+<section class="dual-grid reveal">
 
-<!-- INGREDIENTS (DETAILED) -->
-<section class="ingredients reveal">
-
-  <div class="ingredient">
+  <div class="card">
     <h3>Hyaluronic Acid</h3>
-    <p>Deep hydration booster that retains moisture and plumps skin.</p>
+    <p>Deep hydration molecule that locks moisture into skin layers.</p>
   </div>
 
-  <div class="ingredient">
+  <div class="card">
     <h3>Niacinamide</h3>
-    <p>Improves skin tone, reduces redness, and strengthens barrier.</p>
+    <p>Improves tone, reduces redness, strengthens skin barrier.</p>
   </div>
 
-  <div class="ingredient">
+  <div class="card">
     <h3>Peptides</h3>
-    <p>Supports collagen production for smoother, firmer skin.</p>
+    <p>Supports collagen for firmness and anti-aging effect.</p>
   </div>
 
 </section>
 
-<!-- HOW TO USE (STEP BY STEP) -->
+<!-- HOW TO USE -->
 <section class="steps reveal">
-
-  <div class="step"><span>1</span> Cleanse skin thoroughly</div>
-  <div class="step"><span>2</span> Apply small amount of cream</div>
-  <div class="step"><span>3</span> Massage until fully absorbed</div>
-
+  <div class="step">1. Cleanse skin properly</div>
+  <div class="step">2. Apply small amount evenly</div>
+  <div class="step">3. Massage until absorbed</div>
 </section>
 
 <!-- SKIN TYPE -->
-<section class="skin-type reveal">
-
-  <div class="skin">Perfect for Dry Skin</div>
-  <div class="skin">Perfect for Oily Skin</div>
-  <div class="skin">Perfect for Sensitive Skin</div>
-
+<section class="skin-grid reveal">
+  <div class="skin">Dry Skin</div>
+  <div class="skin">Oily Skin</div>
+  <div class="skin">Sensitive Skin</div>
 </section>
 
 <!-- REVIEWS -->
@@ -449,12 +337,12 @@ body{
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “Skin feels deeply hydrated and smoother.”
+    “Skin feels smoother and deeply hydrated.”
   </div>
 
   <div class="review">
     <div class="stars">★★★★★</div>
-    “Luxury feel with real visible results.”
+    “Luxury feel with visible glow improvement.”
   </div>
 
 </section>
