@@ -3,196 +3,232 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Skin Care</title>
+<title>Luxury Skincare</title>
 
 <style>
 
 /* =========================
-   BASE
+   LUXURY DESIGN SYSTEM
 ========================= */
-body {
-  margin: 0;
+:root{
+  --bg:#f6f1ea;
+  --text:#1b1b1b;
+  --muted:#6b6b6b;
+  --card:#ffffff;
+  --accent:#b08d57;
+}
+
+body{
+  margin:0;
   font-family: Arial, sans-serif;
-  background: #f7f4ef;
-  color: #1a1a1a;
-  overflow-x: hidden;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
 /* =========================
-   ANIMATIONS
+   SCROLL REVEAL
 ========================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:0.9s cubic-bezier(0.2,0.8,0.2,1);
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* =========================
-   HERO
+   HERO (EDITORIAL STYLE)
 ========================= */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px 20px;
+.hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:60px 20px 30px;
 }
 
-.hero img {
-  width: 90%;
-  max-width: 420px;
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+.hero img{
+  width:85%;
+  max-width:420px;
+  border-radius:22px;
+  box-shadow:0 30px 70px rgba(0,0,0,0.15);
 }
 
-.hero h1 {
-  font-size: 32px;
-  margin-top: 20px;
-  letter-spacing: 0.5px;
+.hero h1{
+  font-size:34px;
+  margin:20px 0 10px;
+  letter-spacing:0.5px;
 }
 
-.hero p {
-  color: #666;
-  margin-top: 10px;
+.hero p{
+  color:var(--muted);
+  max-width:400px;
+  line-height:1.6;
 }
 
 /* =========================
-   PRODUCT STRIP
+   GALLERY STRIP
 ========================= */
-.strip {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  padding: 20px;
-  flex-wrap: wrap;
+.gallery{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:20px;
+  flex-wrap:wrap;
 }
 
-.strip img {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: 0.3s;
+.gallery img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.3s;
 }
 
-.strip img:hover {
-  transform: scale(1.05);
+.gallery img:hover{
+  transform:scale(1.05);
 }
 
 /* =========================
-   DESCRIPTION
+   STORY SECTION
 ========================= */
-.desc {
-  padding: 30px 20px;
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  color: #555;
-  line-height: 1.6;
+.story{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  padding:40px 20px;
+  line-height:1.8;
+  color:var(--muted);
 }
 
 /* =========================
-   BEFORE / AFTER (MOVED UP)
+   BEFORE AFTER (CINEMATIC)
 ========================= */
-.before-after {
-  padding: 40px 20px;
-  text-align: center;
+.ba{
+  padding:40px 20px;
+  text-align:center;
 }
 
-.ba-box {
-  position: relative;
-  max-width: 400px;
-  margin: auto;
-  border-radius: 15px;
-  overflow: hidden;
+.ba-box{
+  position:relative;
+  max-width:420px;
+  margin:auto;
+  border-radius:18px;
+  overflow:hidden;
 }
 
-.ba-box img {
-  width: 100%;
-  display: block;
+.ba-box img{
+  width:100%;
+  display:block;
 }
 
-.after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  overflow: hidden;
+.after{
+  position:absolute;
+  top:0;
+  left:0;
+  width:50%;
+  overflow:hidden;
 }
 
-.handle {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 3px;
-  height: 100%;
-  background: white;
+.handle{
+  position:absolute;
+  top:0;
+  left:50%;
+  width:2px;
+  height:100%;
+  background:rgba(255,255,255,0.9);
 }
 
 /* =========================
-   PRODUCT DETAILS
+   PRODUCT SECTION
 ========================= */
-.details {
-  padding: 30px 20px;
-  text-align: center;
+.product{
+  text-align:center;
+  padding:40px 20px;
 }
 
-.price {
-  font-size: 24px;
-  margin: 10px 0;
+.price{
+  font-size:22px;
+  margin:10px 0;
+  color:var(--accent);
 }
 
-.btn {
-  padding: 14px;
-  width: 80%;
-  max-width: 300px;
-  background: #111;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+.btn{
+  background:var(--text);
+  color:white;
+  padding:14px 20px;
+  border:none;
+  border-radius:12px;
+  width:80%;
+  max-width:300px;
+  cursor:pointer;
+}
+
+/* =========================
+   TRUST / BENEFITS
+========================= */
+.benefits{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:15px;
+  max-width:600px;
+  margin:40px auto;
+  padding:0 20px;
+}
+
+.benefit{
+  background:var(--card);
+  padding:15px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  text-align:center;
+  color:var(--muted);
 }
 
 /* =========================
    REVIEWS
 ========================= */
-.reviews {
-  padding: 40px 20px;
-  text-align: center;
+.reviews{
+  text-align:center;
+  padding:40px 20px;
 }
 
-.review {
-  background: white;
-  margin: 10px auto;
-  max-width: 350px;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+.review{
+  background:white;
+  max-width:360px;
+  margin:10px auto;
+  padding:15px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  color:var(--muted);
 }
 
 /* =========================
-   MOBILE FIRST (IMPORTANT)
+   MOBILE FIRST IMPROVEMENTS
 ========================= */
-@media (min-width: 768px) {
+@media(min-width:768px){
 
-  .hero {
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-    text-align: left;
+  .hero{
+    flex-direction:row;
+    gap:40px;
+    text-align:left;
+    justify-content:center;
   }
 
-  .hero img {
-    width: 380px;
+  .hero img{
+    width:380px;
   }
 
-  .hero h1 {
-    font-size: 40px;
+  .hero h1{
+    font-size:42px;
+  }
+
+  .benefits{
+    grid-template-columns:1fr 1fr;
   }
 }
 
@@ -203,29 +239,27 @@ body {
 
 <!-- HERO -->
 <section class="hero reveal">
-  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448" alt="product">
+  <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <div>
-    <h1>Luxury Skin Renewal Cream</h1>
-    <p>Visible glow, deep hydration, real transformation</p>
+    <h1>Radiance, Rewritten</h1>
+    <p>A refined skincare ritual designed to restore glow, texture, and balance.</p>
   </div>
 </section>
 
-<!-- PRODUCT STRIP IMAGES -->
-<div class="strip reveal">
+<!-- GALLERY -->
+<div class="gallery reveal">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/assetsproduct_jpg.jpg?v=1776074448">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
   <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/after_jpg.png?v=1776074447">
 </div>
 
-<!-- DESCRIPTION -->
-<section class="desc reveal">
-  A high-performance skincare formula designed to restore glow, smooth texture, and deeply hydrate skin without heaviness.
+<!-- STORY -->
+<section class="story reveal">
+  Crafted with a lightweight hydrating formula that melts into skin, restoring natural luminosity without heaviness or residue.
 </section>
 
-<!-- BEFORE AFTER (MOVED HERE, NOT END) -->
-<section class="before-after reveal">
-  <h2>Visible Results</h2>
-
+<!-- BEFORE AFTER -->
+<section class="ba reveal">
   <div class="ba-box">
     <img src="https://cdn.shopify.com/s/files/1/0991/8038/0469/files/before.png?v=1776074446">
     <div class="after">
@@ -235,54 +269,60 @@ body {
   </div>
 </section>
 
-<!-- DETAILS -->
-<section class="details reveal">
+<!-- PRODUCT -->
+<section class="product reveal">
   <h2>Luxury Skin Cream</h2>
   <div class="price">$39.00</div>
   <button class="btn">Add to Cart</button>
 </section>
 
+<!-- BENEFITS -->
+<section class="benefits reveal">
+  <div class="benefit">Deep hydration without heaviness</div>
+  <div class="benefit">Brightens and smooths skin tone</div>
+  <div class="benefit">Clinically-inspired formulation feel</div>
+  <div class="benefit">Clean luxury skincare aesthetic</div>
+</section>
+
 <!-- REVIEWS -->
 <section class="reviews reveal">
-  <h2>Customer Reviews</h2>
-
-  <div class="review">“Skin feels smooth after 3 days”</div>
-  <div class="review">“Luxury texture, really works”</div>
-  <div class="review">“Better than expensive brands”</div>
+  <h2>Client Feedback</h2>
+  <div class="review">“Feels like a luxury spa treatment at home.”</div>
+  <div class="review">“My skin looks healthier in days.”</div>
+  <div class="review">“Minimal product, maximum glow.”</div>
 </section>
 
 <script>
 
 /* =========================
-   SCROLL ANIMATION
+   SCROLL REVEAL
 ========================= */
 const items = document.querySelectorAll('.reveal');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('active');
     }
   });
-}, { threshold: 0.15 });
+},{threshold:0.15});
 
-items.forEach(el => observer.observe(el));
+items.forEach(el=>observer.observe(el));
 
 /* =========================
-   SIMPLE BEFORE AFTER
+   BEFORE AFTER DRAG
 ========================= */
 const box = document.querySelector('.ba-box');
 const after = document.querySelector('.after');
 const handle = document.querySelector('.handle');
 
-if (box) {
-  box.addEventListener('mousemove', (e) => {
+if(box){
+  box.addEventListener('mousemove',(e)=>{
     const rect = box.getBoundingClientRect();
     let x = e.clientX - rect.left;
-    let percent = (x / rect.width) * 100;
-
-    after.style.width = percent + '%';
-    handle.style.left = percent + '%';
+    let p = (x / rect.width) * 100;
+    after.style.width = p + '%';
+    handle.style.left = p + '%';
   });
 }
 
